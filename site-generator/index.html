@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NOVA AI Site Generator — créez rapidement un site vitrine personnalisé.">
+<title>NOVA AI — Site Generator</title>
+<style>
+:root{--bg:#0b0c0b;--panel:#131513;--line:#292d29;--text:#f2f3ed;--muted:#9a9f97;--lime:#c8f169;--radius:18px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{max-width:1440px;margin:auto;padding:28px}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:22px}.brand{font-weight:900;letter-spacing:2px}.brand span{color:var(--lime)}.top small{color:var(--muted)}.back{color:var(--muted);text-decoration:none;font-size:13px}.back:hover{color:var(--lime)}.intro{padding:34px 0 26px}.eyebrow{color:var(--lime);font-size:11px;letter-spacing:2px;font-weight:800}.intro h1{font-size:clamp(30px,5vw,54px);letter-spacing:-2px;margin:12px 0}.intro p{color:var(--muted);max-width:650px;line-height:1.6;margin:0}.layout{display:grid;grid-template-columns:370px minmax(0,1fr);gap:18px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:22px}.panel h2{font-size:17px;margin:0 0 5px}.sub{color:var(--muted);font-size:12px;margin:0 0 22px}.field{margin:0 0 15px}.field label{display:block;color:#c8ccc4;font-size:12px;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;background:#0b0d0b;border:1px solid #303530;color:var(--text);padding:12px;border-radius:10px;outline:none}.field textarea{min-height:72px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--lime)}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.btn{border:1px solid var(--line);background:#202420;color:var(--text);padding:12px 15px;border-radius:10px;font-weight:700;font-size:12px}.btn.primary{background:var(--lime);color:#111;border-color:var(--lime)}.btn:hover{transform:translateY(-1px)}.preview-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.preview-head strong{font-size:14px}.live{color:var(--lime);font-size:11px}.frame-wrap{background:#080908;padding:10px;border:1px solid var(--line);border-radius:15px}.preview{display:block;width:100%;height:720px;border:0;border-radius:9px;background:white}.hint{color:var(--muted);font-size:11px;line-height:1.5;margin:12px 2px 0}.notice{margin-top:20px;padding:13px 15px;border:1px solid #4b512f;background:#171b11;border-radius:12px;color:#c9d4b0;font-size:12px;line-height:1.5}.footer{text-align:center;color:#646b63;font-size:11px;padding:30px 0 10px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.preview{height:620px}.shell{padding:18px}.top small{display:none}}@media(max-width:520px){.two{grid-template-columns:1fr}.preview{height:560px}.panel{padding:17px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><div class="brand">NOVA <span>AI</span> <small style="font-weight:500;letter-spacing:0;color:#888">/ STUDIO</small></div><a class="back" href="../index.html">← Retour à NOVA AI</a></header>
+<section class="intro"><div class="eyebrow">OUTIL DE PRODUCTION · 01</div><h1>Site Generator<span style="color:var(--lime)">.</span></h1><p>Configurez les informations d'une entreprise, visualisez instantanément son site vitrine et exportez une première version HTML prête à personnaliser.</p></section>
+<main class="layout">
+<section class="panel">
+<h2>Configuration du site</h2><p class="sub">Renseignez les informations de votre projet.</p>
+<div class="field"><label for="business">Nom de l'entreprise</label><input id="business" value="Atelier Horizon" maxlength="55"></div>
+<div class="field"><label for="sector">Secteur d'activité</label><select id="sector"><option value="artisan">Artisan / Rénovation</option><option value="restaurant">Restaurant / Café</option><option value="service">Entreprise de services</option><option value="coach">Coaching / Bien-être</option></select></div>
+<div class="field"><label for="city">Ville / zone d'intervention</label><input id="city" value="Lyon et alentours" maxlength="65"></div>
+<div class="field"><label for="tagline">Phrase d'accroche</label><textarea id="tagline" maxlength="150">Des réalisations soignées, un accompagnement de confiance.</textarea></div>
+<div class="field"><label for="description">Présentation courte</label><textarea id="description" maxlength="260">Nous accompagnons nos clients avec sérieux et savoir-faire, de la première idée jusqu'à la réalisation de leur projet.</textarea></div>
+<div class="two"><div class="field"><label for="phone">Téléphone</label><input id="phone" value="06 00 00 00 00" maxlength="25"></div><div class="field"><label for="email">E-mail</label><input id="email" type="email" value="contact@exemple.fr" maxlength="80"></div></div>
+<div class="two"><div class="field"><label for="accent">Couleur principale</label><select id="accent"><option value="#c7ed75">Vert doux</option><option value="#d6b58a">Sable</option><option value="#9db9d5">Bleu</option><option value="#d58d80">Terracotta</option><option value="#c5c5c5">Gris</option></select></div><div class="field"><label for="style">Ambiance</label><select id="style"><option value="modern">Moderne</option><option value="elegant">Élégante</option><option value="bold">Audacieuse</option></select></div></div>
+<div class="actions"><button class="btn primary" id="export">↓ Exporter le site HTML</button><button class="btn" id="reset">Réinitialiser</button></div>
+<div class="notice">Prototype de génération par modèles : les textes et coordonnées sont des exemples à valider avec le client. Aucun site n'est publié automatiquement.</div>
+</section>
+<section>
+<div class="preview-head"><strong>Aperçu en direct</strong><span class="live">● ACTUALISATION AUTOMATIQUE</span></div>
+<div class="frame-wrap"><iframe class="preview" id="preview" title="Aperçu du site généré" sandbox="allow-scripts allow-forms"></iframe></div>
+<p class="hint">L'aperçu est une maquette locale. Vérifiez les textes, les coordonnées, les mentions légales et l'affichage mobile avant toute mise en ligne.</p>
+</section>
+</main>
+<footer class="footer">NOVA AI · SITE GENERATOR · PROTOTYPE</footer>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const defaults={business:"Atelier Horizon",sector:"artisan",city:"Lyon et alentours",tagline:"Des réalisations soignées, un accompagnement de confiance.",description:"Nous accompagnons nos clients avec sérieux et savoir-faire, de la première idée jusqu'à la réalisation de leur projet.",phone:"06 00 00 00 00",email:"contact@exemple.fr",accent:"#c7ed75",style:"modern"};
+const copy={
+artisan:{label:"ARTISANAT · SAVOIR-FAIRE",services:["Conseil & étude","Réalisation sur mesure","Suivi de chantier"],titles:["Un projet ? Parlons-en.","Un travail soigné, jusque dans les détails.","Un accompagnement de confiance."]},
+restaurant:{label:"CUISINE · CONVIVIALITÉ",services:["Cuisine de saison","Produits sélectionnés","Accueil chaleureux"],titles:["Le goût des bons moments.","Une table à découvrir.","Réservez votre moment."]},
+service:{label:"EXPERTISE · ACCOMPAGNEMENT",services:["Diagnostic personnalisé","Solutions adaptées","Suivi & disponibilité"],titles:["Des solutions pensées pour vous.","Votre projet mérite la bonne équipe.","Parlons de vos besoins."]},
+coach:{label:"ACCOMPAGNEMENT · BIEN-ÊTRE",services:["Échange découverte","Accompagnement adapté","Suivi personnalisé"],titles:["Avancez à votre rythme.","Un accompagnement qui vous ressemble.","Faisons le premier pas."]}
+};
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function values(){return Object.fromEntries(["business","sector","city","tagline","description","phone","email","accent","style"].map(k=>[k,$(k).value.trim()]));}
+function makeSite(d){
+const c=copy[d.sector]||copy.artisan;const accent=d.accent||"#c7ed75";const elegant=d.style==="elegant";const bold=d.style==="bold";
+const bg=elegant?"#f2eee7":bold?"#171918":"#f5f6f2";const fg=elegant?"#29251f":bold?"#f6f7f2":"#20241e";const muted=elegant?"#777064":bold?"#b6beb5":"#697168";
+const services=c.services.map((s,i)=>'<article class="service"><span>0'+(i+1)+'</span><h3>'+esc(s)+'</h3><p>Une approche claire, un travail attentif et une prestation adaptée à votre besoin.</p></article>').join("");
+return '<!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(d.business)+'</title><style>*{box-sizing:border-box}body{margin:0;background:'+bg+';color:'+fg+';font-family:Arial,sans-serif}header{height:76px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid '+muted+'33}header strong{font-size:18px;letter-spacing:-.5px}nav{display:flex;gap:25px;font-size:12px}nav a{color:'+fg+';text-decoration:none}.hero{padding:105px 10% 110px;max-width:1150px;margin:auto}.tag{font-size:10px;letter-spacing:2px;color:'+muted+';font-weight:bold}.hero h1{font-size:clamp(42px,7vw,82px);letter-spacing:-4px;line-height:1.02;max-width:800px;margin:22px 0}.hero p{max-width:580px;line-height:1.7;color:'+muted+'}.cta{display:inline-block;margin-top:20px;padding:15px 22px;background:'+accent+';color:#171a14;text-decoration:none;font-weight:bold;font-size:12px;border-radius:3px}.services{background:'+ (elegant?"#e8e1d6":bold?"#202522":"#e9ece5")+';padding:75px 10%}.services h2,.contact h2{font-size:34px;letter-spacing:-1px;margin:12px 0 35px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service{padding:25px;background:'+bg+';min-height:180px}.service span{color:'+muted+';font-size:11px}.service h3{font-size:18px}.service p{color:'+muted+';font-size:13px;line-height:1.6}.contact{padding:75px 10%;text-align:center}.contact p{color:'+muted+';line-height:1.7}.contact a{color:'+fg+'}footer{padding:25px 10%;border-top:1px solid '+muted+'44;color:'+muted+';font-size:11px;display:flex;justify-content:space-between}@media(max-width:650px){nav{gap:10px}nav a{font-size:10px}.hero{padding:75px 7%}.hero h1{letter-spacing:-2px}.services{padding:55px 7%}.cards{grid-template-columns:1fr}.contact{padding:55px 7%}footer{padding:20px 7%;gap:10px;flex-wrap:wrap}}</style></head><body><header><strong>'+esc(d.business)+'</strong><nav><a href="#services">Services</a><a href="#contact">Contact</a></nav></header><main><section class="hero"><div class="tag">'+c.label+' · '+esc(d.city).toUpperCase()+'</div><h1>'+esc(d.tagline)+'</h1><p>'+esc(d.description)+'</p><a class="cta" href="#contact">NOUS CONTACTER ↗</a></section><section class="services" id="services"><div class="tag">CE QUE NOUS PROPOSONS</div><h2>'+c.titles[1]+'</h2><div class="cards">'+services+'</div></section><section class="contact" id="contact"><div class="tag">ÉCHANGEONS SUR VOTRE PROJET</div><h2>'+c.titles[2]+'</h2><p>'+esc(d.city)+'<br>'+esc(d.phone)+'<br><a href="mailto:'+esc(d.email)+'">'+esc(d.email)+'</a></p><a class="cta" href="mailto:'+esc(d.email)+'">ENVOYER UN E-MAIL ↗</a></section></main><footer><span>© '+new Date().getFullYear()+' '+esc(d.business)+'</span><span>Site vitrine · Maquette à personnaliser</span></footer></body></html>';
+}
+function update(){const d=values();$("preview").srcdoc=makeSite(d);}
+["business","sector","city","tagline","description","phone","email","accent","style"].forEach(id=>$(id).addEventListener("input",update));
+$("export").addEventListener("click",()=>{const blob=new Blob([makeSite(values())],{type:"text/html;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(values().business||"site-vitrine").toLowerCase().replace(/[^a-z0-9]+/g,"-")+".html";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);});
+$("reset").addEventListener("click",()=>{Object.entries(defaults).forEach(([k,v])=>$(k).value=v);update();});
+update();
+</script>
+</body></html>
