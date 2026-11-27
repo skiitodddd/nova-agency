@@ -4,7 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOVA Flow — Automation Dashboard</title>
+<meta name="theme-color" content="#10110f">
+<meta name="description" content="NOVA Flow — tableau de bord de démonstration illustrant la gestion de demandes et des workflows automatisés.">
+<title>NOVA Flow — Démo de workflow | NOVA AI</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#0b0d12;--panel:#131720;--panel2:#191f2b;--line:#252e3d;--text:#edf1f8;--muted:#8995a8;--purple:#9177ff;--blue:#63a7ff;--green:#56d6a0;--orange:#e9b46a}
@@ -100,7 +102,7 @@ body{background:radial-gradient(ellipse at 85% 0%,#252b1b 0%,var(--bg) 43%);colo
 .toast{border-radius:3px}
 :focus-visible{outline:2px solid var(--purple);outline-offset:3px}
 @media(max-width:650px){.sidebar{background:#141611}}
-</style>
+.demo-footer{padding:20px 4%;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px}.demo-footer a{color:var(--purple);text-decoration:underline;text-underline-offset:4px}:focus-visible{outline:2px solid var(--purple);outline-offset:4px}@media(max-width:650px){.demo-footer{padding:18px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}</style>
 </head>
 <body>
 <div class="app">
@@ -195,6 +197,7 @@ body{background:radial-gradient(ellipse at 85% 0%,#252b1b 0%,var(--bg) 43%);colo
 </section>
 </main>
 </div>
+<footer class="demo-footer"><a href="../index.html">← Retour au studio NOVA AI</a><span>Prototype local · Workflow simulé dans le navigateur</span></footer>
 <div class="toast" id="toast"></div>
 
 <script>
