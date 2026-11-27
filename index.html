@@ -4,9 +4,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#08080d">
+<meta name="theme-color" content="#11110f">
+<meta name="description" content="NOVA AI imagine des sites web modernes, des interfaces soignées et des solutions digitales adaptées aux petites entreprises. Découvrez nos projets et échangeons sur vos besoins.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NOVA AI — Studio digital & solutions web">
+<meta property="og:description" content="Sites web, design digital et exploration de solutions IA pour les petites entreprises.">
+<meta property="og:url" content="https://skiitodddd.github.io/nova-agency/">
+<meta name="twitter:card" content="summary">
 <meta name="description" content="NOVA AI — Agence digitale : création de sites web, design et solutions numériques.">
-<title>NOVA AI — Digital Agency</title>
+<title>NOVA AI — Studio digital & création web</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
@@ -252,6 +259,40 @@ footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
 @media(max-width:650px){.nav-links{background:#f1f0eb;border-bottom:1px solid rgba(17,17,15,.14)}.nav-links a{color:#33332e}.nav-cta{color:#f8f7f1!important}.service-card{padding:26px 0}.service-card+.service-card{padding-left:0}}
 </style>
 
+<style id="nova-v3-polish">
+/* NOVA AI — finition globale */
+:focus-visible{outline:2px solid #d8f36a;outline-offset:4px}
+::selection{background:#d8f36a;color:#171714}
+.nav-links a,.footer-links a,.project-link,.service-card a{transition:color .2s ease}
+.btn,.nav-cta,.project-card,.price-card,.service-card{transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.project-card{overflow:hidden}
+.project-preview{position:relative;overflow:hidden}
+.project-preview::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 35%,rgba(216,243,106,.08));pointer-events:none}
+.project-info p{line-height:1.75}
+.project-tag{font-size:9px;letter-spacing:1px}
+.price-card{display:flex;flex-direction:column}
+.price-card .price-features{flex:1}
+.contact-detail a{color:inherit;text-decoration:underline;text-decoration-color:#d8f36a;text-underline-offset:4px}
+.contact-detail a:hover{color:#d8f36a}
+.form-note{max-width:520px;margin-left:auto;margin-right:auto}
+.faq-question:focus-visible{outline-offset:-4px}
+@media(hover:hover){
+.project-card:hover{transform:translateY(-5px)}
+.project-card:hover .project-preview{filter:saturate(1.08)}
+.price-card:hover{transform:translateY(-4px)}
+.service-card:hover .service-icon{background:#d8f36a;color:#171714}
+}
+@media(max-width:650px){
+.hero h1{font-size:clamp(43px,12vw,64px);letter-spacing:-2px}
+.hero-description{font-size:14px}
+.hero-actions .btn{width:100%}
+.hero-bottom{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.project-info{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){
+.project-card,.price-card,.service-card,.btn{transition:none!important}
+}
+</style>
 </head>
 
 <body>
@@ -259,7 +300,7 @@ footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
 <div class="container">
 <nav>
 <a href="#home" class="logo">NOVA<span>.</span>AI</a>
-<button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+<button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-controls="navLinks" aria-expanded="false">☰</button>
 <ul class="nav-links" id="navLinks">
 <li><a href="#services">Services</a></li>
 <li><a href="#about">Agence</a></li>
@@ -331,13 +372,13 @@ footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
 <div class="section-heading reveal">
 <div class="section-label">Portfolio</div>
 <h2 class="section-title">Des idées transformées en <span class="gradient-text">projets.</span></h2>
-<p class="section-description">Découvrez quelques concepts et projets développés dans l'univers NOVA AI.</p>
+<p class="section-description">Découvrez trois démonstrations conçues par NOVA AI pour illustrer des pistes de design et de fonctionnalités. Ces projets sont des concepts, pas des réalisations clients.</p>
 </div>
 
 <div class="portfolio-grid">
 <article class="project-card reveal">
 <a href="./Maison%20Noire/index.html">
-<div class="project-preview preview-one"><div class="preview-content"><strong>MAISON NOIRE</strong><span>INTERIOR DESIGN CONCEPT</span></div></div>
+<div class="project-preview preview-one"><div class="preview-content"><strong>MAISON NOIRE</strong><span>RESTAURANT WEBSITE CONCEPT</span></div></div>
 </a>
 <div class="project-info"><h3>Maison Noire</h3><p>Concept de site vitrine avec une direction artistique sombre et élégante.</p><div class="project-bottom"><span class="project-tag">WEB DESIGN</span><a class="project-link" href="./Maison%20Noire/index.html">Visiter le projet ↗</a></div></div>
 </article>
@@ -346,14 +387,14 @@ footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
 <a href="./NOVA%20Assistant/index.html">
 <div class="project-preview preview-two"><div class="preview-content"><strong>NOVA ASSISTANT</strong><span>AI EXPERIENCE</span></div></div>
 </a>
-<div class="project-info"><h3>NOVA Assistant</h3><p>Concept d'interface autour d'un assistant numérique intelligent.</p><div class="project-bottom"><span class="project-tag">AI INTERFACE</span><a class="project-link" href="./NOVA%20Assistant/index.html">Visiter le projet ↗</a></div></div>
+<div class="project-info"><h3>NOVA Assistant</h3><p>Simulation locale d’un assistant conversationnel avec réponses prédéfinies — sans modèle IA ni connexion externe.</p><div class="project-bottom"><span class="project-tag">AI INTERFACE</span><a class="project-link" href="./NOVA%20Assistant/index.html">Visiter le projet ↗</a></div></div>
 </article>
 
 <article class="project-card reveal">
 <a href="./Nova%20Automation/index.html">
 <div class="project-preview preview-three"><div class="preview-content"><strong>NOVA AUTOMATION</strong><span>WORKFLOW CONCEPT</span></div></div>
 </a>
-<div class="project-info"><h3>Nova Automation</h3><p>Exploration d'une interface dédiée à la présentation de solutions d'automatisation.</p><div class="project-bottom"><span class="project-tag">AUTOMATION</span><a class="project-link" href="./Nova%20Automation/index.html">Visiter le projet ↗</a></div></div>
+<div class="project-info"><h3>Nova Automation</h3><p>Tableau de bord interactif illustrant un workflow de traitement de demandes — exécution simulée dans le navigateur.</p><div class="project-bottom"><span class="project-tag">AUTOMATION</span><a class="project-link" href="./Nova%20Automation/index.html">Visiter le projet ↗</a></div></div>
 </article>
 
 <article class="project-card reveal">
@@ -384,7 +425,7 @@ footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
 <article class="price-card featured reveal"><div class="popular">LE PLUS POPULAIRE</div><h3>NOVA BUSINESS</h3><p class="sub">Pour une présence plus complète.</p><div class="price">149 € <small>/ projet</small></div><ul class="price-features"><li>Jusqu'à 3 pages</li><li>Design premium personnalisé</li><li>Animations simples</li><li>Présentation des services</li><li>Formulaire ou liens de contact</li><li>Optimisation mobile</li><li>2 séries de corrections</li></ul><a href="#contact" class="btn">Choisir Business ↗</a></article>
 <article class="price-card reveal"><h3>NOVA PREMIUM</h3><p class="sub">Une expérience plus complète.</p><div class="price">199 € <small>/ projet</small></div><ul class="price-features"><li>Jusqu'à 5 pages</li><li>Design entièrement personnalisé</li><li>Animations avancées</li><li>Galerie ou portfolio</li><li>Interactions personnalisées</li><li>Optimisation mobile</li><li>2 séries de corrections</li></ul><a href="#contact" class="btn btn-outline">Choisir Premium ↗</a></article>
 </div>
-<p class="pricing-note">Tarifs indicatifs de lancement pour des projets simples. Hébergement, nom de domaine, fonctionnalités avancées et demandes supplémentaires non inclus. Chaque projet doit être validé avant devis.</p>
+<p class="pricing-note">Tarifs indicatifs de démonstration, non contractuels. Hébergement, nom de domaine, maintenance, fonctionnalités avancées et demandes supplémentaires non inclus. Toute prestation réelle doit faire l’objet d’un périmètre, d’un devis et d’une validation préalables.</p>
 </div>
 </section>
 
@@ -409,7 +450,7 @@ footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
 <h2 class="section-title">Votre prochain projet commence <span class="gradient-text">ici.</span></h2>
 <p>Vous avez une idée, une entreprise à développer ou un projet digital ? Présentez-nous votre besoin et échangeons sur les possibilités.</p>
 <div class="contact-detail"><small>AGENCE</small><strong>NOVA AI — Digital Agency</strong></div>
-<div class="contact-detail"><small>EMAIL</small><strong>novaai.agence@gmail.com</strong></div>
+<div class="contact-detail"><small>EMAIL</small><strong><a href="mailto:novaai.agence@gmail.com">novaai.agence@gmail.com ↗</a></strong></div>
 </div>
 <form class="contact-form reveal" id="contactForm">
 <div class="form-row">
@@ -431,7 +472,7 @@ footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
 <div class="container">
 <div class="footer-inner">
 <a href="#home" class="logo">NOVA<span>.</span>AI</a>
-<p class="footer-copy">© <span id="year"></span> NOVA AI. Tous droits réservés.</p>
+<p class="footer-copy">© <span id="year"></span> NOVA AI. Projet digital en développement.</p>
 <div class="footer-links"><a href="#services">Services</a><a href="#pricing">Tarifs</a><a href="#contact">Contact</a></div>
 </div>
 </div>
@@ -483,9 +524,10 @@ document.getElementById("contactForm").addEventListener("submit", event => {
   const form = new FormData(event.target);
   const name = form.get("name");
   const email = form.get("email");
-  const company = form.get("company") || "Non renseignée";
+  const company = String(form.get("company") || "").trim() || "Non renseignée";
   const offer = form.get("offer");
-  const message = form.get("message");
+  const message = String(form.get("message") || "").trim();
+  if (!name || !email || !message) return;
 
   const subject = encodeURIComponent("Nouvelle demande de projet — NOVA AI");
   const body = encodeURIComponent(
