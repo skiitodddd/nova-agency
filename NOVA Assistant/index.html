@@ -58,13 +58,36 @@ button{cursor:pointer}
 @keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes blink{to{opacity:.25;transform:translateY(-3px)}}
 @media(max-width:750px){.layout{grid-template-columns:1fr}.sidebar{display:none}.chat{height:75vh;min-height:520px}.app{padding:14px}.message{max-width:95%}}
+
+/* Identité NOVA AI — édition monochrome */
+:root{--bg:#10110f;--panel:#171915;--panel2:#20231d;--line:#34382e;--text:#f2f0e8;--muted:#a6a99b;--purple:#c7ef69;--cyan:#c7ef69}
+body{background:radial-gradient(ellipse at 75% 0%,#252b1b 0%,var(--bg) 42%);color:var(--text)}
+.sidebar,.chat{border-radius:4px;border-color:var(--line);box-shadow:0 18px 55px #0003}
+.logo,.avatar{background:var(--purple);color:#171a10;border-radius:4px}
+.brand span{color:var(--purple)!important}
+.status{color:var(--purple)}
+.dot{background:var(--purple);box-shadow:0 0 12px #c7ef6966}
+.business{background:#20231d;border-color:var(--line);border-radius:4px}
+.side-button{border-radius:3px}
+.side-button:hover,.side-button.active{background:#303a20;color:var(--purple)}
+.chat-header small{color:var(--purple)}
+.bubble{border-radius:3px 12px 12px 12px}
+.user .bubble{background:#303a20;border-color:#53652e}
+.mini-avatar{border-radius:4px;background:#303a20}
+.suggestion{border-radius:3px;color:var(--purple)}
+.suggestion:hover{background:#303a20}
+.composer input{border-radius:3px}
+.composer input:focus{border-color:var(--purple)}
+.send{background:var(--purple);color:#171a10;border-radius:3px}
+:focus-visible{outline:2px solid var(--purple);outline-offset:3px}
+@media(max-width:750px){.chat{border-radius:4px}}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="topbar">
  <div class="brand"><div class="logo">N</div>NOVA <span style="color:#9b87ff">ASSISTANT</span></div>
- <div class="status"><span class="dot"></span> Assistant en ligne</div>
+ <div class="status"><span class="dot"></span> Simulation interactive</div>
 </header>
 
 <div class="layout">
@@ -82,7 +105,7 @@ button{cursor:pointer}
 <section class="chat">
  <div class="chat-header">
   <div class="avatar">N</div>
-  <div><strong>Assistant NOVA</strong><small>● Disponible pour vous aider</small></div>
+  <div><strong>Assistant NOVA</strong><small>● Démonstration locale — sans IA connectée</small></div>
  </div>
  <div class="messages" id="messages" aria-live="polite"></div>
  <div class="typing" id="typing">L'assistant écrit <i></i><i></i><i></i></div>
