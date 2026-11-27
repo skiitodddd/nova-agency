@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOVA AI — Client Dashboard</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg:#08080d;
+  --panel:#11111a;
+  --panel2:#171724;
+  --purple:#9061ff;
+  --text:#f4f1ff;
+  --muted:#89879c;
+  --border:rgba(255,255,255,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  min-height:100vh;
+}
+button{font:inherit;cursor:pointer}
+.app{display:flex;min-height:100vh}
+.sidebar{
+  width:245px;background:#0d0d15;
+  border-right:1px solid var(--border);
+  padding:28px 18px;position:fixed;
+  height:100vh;display:flex;flex-direction:column;
+}
+.logo{font-size:25px;font-weight:800;letter-spacing:2px;margin-bottom:45px}
+.logo span{color:var(--purple)}
+.nav-label{font-size:10px;color:var(--muted);letter-spacing:2px;margin:20px 10px 12px}
+.nav-btn{
+  width:100%;display:flex;gap:12px;align-items:center;
+  padding:13px 14px;border:0;border-radius:10px;
+  color:var(--muted);background:transparent;
+  text-align:left;margin-bottom:5px;transition:.2s;
+}
+.nav-btn:hover,.nav-btn.active{
+  background:rgba(144,97,255,.14);color:white;
+}
+.nav-btn.active{box-shadow:inset 3px 0 var(--purple)}
+.sidebar-bottom{margin-top:auto}
+.profile-mini{display:flex;gap:12px;align-items:center;padding:15px 8px;border-top:1px solid var(--border)}
+.avatar{width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,#9d65ff,#4322a0);display:grid;place-items:center;font-weight:800}
+.profile-mini small{color:var(--muted)}
+main{margin-left:245px;width:calc(100% - 245px);padding:35px 42px}
+.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:38px;gap:15px}
+.topbar h1{font-size:25px}
+.topbar p{color:var(--muted);font-size:13px;margin-top:7px}
+.top-actions{display:flex;gap:12px;align-items:center}
+.icon-btn{background:var(--panel);border:1px solid var(--border);color:white;border-radius:10px;padding:11px 14px}
+.primary{background:var(--purple);color:white;border:0;border-radius:10px;padding:12px 17px;font-weight:700;transition:.2s}
+.primary:hover{filter:brightness(1.2);transform:translateY(-2px)}
+.page{display:none;animation:fade .25s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.welcome{
+  background:radial-gradient(ellipse at 85% 50%,rgba(144,97,255,.3),transparent 50%),linear-gradient(110deg,#191526,#11111a);
+  border:1px solid rgba(144,97,255,.2);
+  border-radius:18px;padding:30px;margin-bottom:25px;
+}
+.welcome .tag{font-size:11px;color:#c5aaff;letter-spacing:2px;font-weight:700}
+.welcome h2{font-size:27px;margin:15px 0 9px}
+.welcome p{color:var(--muted);font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;margin-bottom:25px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:21px}
+.stat-label{font-size:12px;color:var(--muted)}
+.stat-value{font-size:28px;font-weight:800;margin:15px 0 7px}
+.stat-foot{font-size:11px;color:#a78bfa}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:28px 0 15px}
+.section-head h3{font-size:17px}
+.text-btn{background:none;border:0;color:#b69aff;font-size:12px}
+.project-list{display:grid;gap:12px}
+.project{display:flex;justify-content:space-between;align-items:center;gap:15px}
+.project h4{font-size:14px;margin-bottom:7px}
+.project p{font-size:11px;color:var(--muted)}
+.status{font-size:10px;padding:7px 10px;border-radius:20px;background:rgba(144,97,255,.14);color:#c6aaff;white-space:nowrap}
+.status.green{background:#123427;color:#70e5a5}
+.status.orange{background:#382a18;color:#f5bf72}
+.grid-services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service-icon{font-size:24px;margin-bottom:16px}
+.service h3{font-size:15px;margin-bottom:9px}
+.service p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:18px}
+.service button{font-size:12px}
+.empty{padding:35px;text-align:center;color:var(--muted)}
+.field{width:100%;background:#090911;border:1px solid var(--border);padding:13px;border-radius:9px;color:white;margin:9px 0 18px;outline:none}
+.field:focus{border-color:var(--purple)}
+label{font-size:12px;color:#c6c2d4}
+#toast{position:fixed;bottom:25px;right:25px;background:#242033;border:1px solid #7650cb;padding:15px 20px;border-radius:12px;opacity:0;transform:translateY(15px);transition:.3s;pointer-events:none}
+#toast.show{opacity:1;transform:translateY(0)}
+.menu-mobile{display:none}
+@media(max-width:1000px){
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .grid-services{grid-template-columns:repeat(2,1fr)}
+ main{padding:25px}
+}
+@media(max-width:650px){
+ .sidebar{width:65px;padding:20px 8px}
+ .logo{font-size:14px;text-align:center;margin:10px 0 35px}
+ .logo span{display:none}
+ .nav-btn{justify-content:center;font-size:0;padding:14px 5px}
+ .nav-label,.profile-mini div:last-child{display:none}
+ .profile-mini{justify-content:center;padding:12px 0}
+ main{margin-left:65px;width:calc(100% - 65px);padding:20px 13px}
+ .topbar{align-items:flex-start}
+ .topbar h1{font-size:20px}
+ .top-actions .primary{font-size:10px;padding:10px}
+ .welcome{padding:20px}
+ .welcome h2{font-size:21px}
+ .stats{gap:9px}
+ .card{padding:14px}
+ .stat-value{font-size:23px}
+ .grid-services{grid-template-columns:1fr}
+ .project{align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="logo">NOVA<span> AI.</span></div>
+  <div class="nav-label">MENU PRINCIPAL</div>
+  <button class="nav-btn active" onclick="showPage('overview',this)">◈ &nbsp; Dashboard</button>
+  <button class="nav-btn" onclick="showPage('projects',this)">▤ &nbsp; Mes projets</button>
+  <button class="nav-btn" onclick="showPage('services',this)">✧ &nbsp; Services</button>
+  <div class="nav-label">MON ESPACE</div>
+  <button class="nav-btn" onclick="showPage('billing',this)">▣ &nbsp; Facturation</button>
+  <button class="nav-btn" onclick="showPage('support',this)">◉ &nbsp; Support</button>
+  <button class="nav-btn" onclick="showPage('profile',this)">⚙ &nbsp; Paramètres</button>
+  <div class="sidebar-bottom">
+    <div class="profile-mini">
+      <div class="avatar">N</div>
+      <div><strong>Client NOVA</strong><br><small>Espace client</small></div>
+    </div>
+  </div>
+</aside>
+
+<main>
+<header class="topbar">
+  <div>
+    <h1 id="page-title">Dashboard</h1>
+    <p>Bienvenue dans votre espace NOVA AI.</p>
+  </div>
+  <div class="top-actions">
+    <button class="icon-btn" onclick="notify('Aucune nouvelle notification.')">♧</button>
+    <button class="primary" onclick="showPage('services',document.querySelectorAll('.nav-btn')[2])">+ Nouveau projet</button>
+  </div>
+</header>
+
+<section class="page active" id="overview">
+  <div class="welcome">
+    <div class="tag">NOVA AI / CLIENT AREA</div>
+    <h2>Bienvenue chez NOVA AI.</h2>
+    <p>Votre espace centralisé pour piloter vos projets digitaux.</p>
+  </div>
+  <div class="stats">
+    <div class="card"><div class="stat-label">Projets actifs</div><div class="stat-value" id="active-count">0</div><div class="stat-foot">Vos projets en cours</div></div>
+    <div class="card"><div class="stat-label">Projets terminés</div><div class="stat-value" id="done-count">0</div><div class="stat-foot">Projets finalisés</div></div>
+    <div class="card"><div class="stat-label">Services disponibles</div><div class="stat-value">03</div><div class="stat-foot">Solutions NOVA AI</div></div>
+    <div class="card"><div class="stat-label">Compte</div><div class="stat-value" style="font-size:21px">FREE</div><div class="stat-foot">Espace découverte</div></div>
+  </div>
+  <div class="section-head"><h3>Projets récents</h3><button class="text-btn" onclick="showPage('projects',document.querySelectorAll('.nav-btn')[1])">Tout afficher →</button></div>
+  <div class="project-list" id="recent-projects"><div class="card empty">Aucun projet pour le moment.</div></div>
+  <div class="section-head"><h3>Découvrir nos solutions</h3></div>
+  <div class="grid-services">
+    <div class="card service"><div class="service-icon">◈</div><h3>Maison Noire</h3><p>Une expérience digitale élégante et moderne.</p><button class="text-btn" onclick="requestService('Maison Noire')">Découvrir →</button></div>
+    <div class="card service"><div class="service-icon">✧</div><h3>NOVA Assistant</h3><p>Des assistants intelligents pour votre activité.</p><button class="text-btn" onclick="requestService('NOVA Assistant')">Découvrir →</button></div>
+    <div class="card service"><div class="service-icon">⌘</div><h3>Nova Automation</h3><p>Automatisez vos tâches et vos processus.</p><button class="text-btn" onclick="requestService('Nova Automation')">Découvrir →</button></div>
+  </div>
+</section>
+
+<section class="page" id="projects">
+  <div class="section-head"><h3>Tous mes projets</h3><button class="primary" onclick="newProject()">+ Créer un projet</button></div>
+  <div class="project-list" id="all-projects"><div class="card empty">Vous n'avez aucun projet.</div></div>
+</section>
+
+<section class="page" id="services">
+  <div class="section-head"><h3>Nos solutions digitales</h3></div>
+  <div class="grid-services">
+    <div class="card service"><div class="service-icon">◈</div><h3>Maison Noire</h3><p>Création et expérience digitale premium.</p><button class="primary" onclick="requestService('Maison Noire')">Demander un devis</button></div>
+    <div class="card service"><div class="service-icon">✧</div><h3>NOVA Assistant</h3><p>Assistants IA adaptés à vos besoins.</p><button class="primary" onclick="requestService('NOVA Assistant')">Demander un devis</button></div>
+    <div class="card service"><div class="service-icon">⌘</div><h3>Nova Automation</h3><p>Automatisation intelligente de vos processus.</p><button class="primary" onclick="requestService('Nova Automation')">Demander un devis</button></div>
+  </div>
+</section>
+
+<section class="page" id="billing">
+  <div class="section-head"><h3>Facturation</h3></div>
+  <div class="card"><h3>Votre facturation</h3><p style="color:var(--muted);margin-top:12px;font-size:13px">Aucune facture disponible pour le moment.</p></div>
+  <p style="color:var(--muted);font-size:11px;margin-top:15px">Les informations affichées sont uniquement une interface de démonstration.</p>
+</section>
+
+<section class="page" id="support">
+  <div class="section-head"><h3>Centre de support</h3></div>
+  <div class="card">
+    <h3>Comment pouvons-nous vous aider ?</h3>
+    <form onsubmit="sendSupport(event)" style="margin-top:22px">
+      <label>Votre adresse e-mail</label><input class="field" id="support-email" type="email" placeholder="vous@exemple.fr" required>
+      <label>Objet</label><input class="field" id="support-subject" placeholder="Votre demande" required>
+      <label>Message</label><textarea class="field" id="support-message" rows="5" placeholder="Expliquez votre demande..." required></textarea>
+      <button class="primary">Préparer ma demande</button>
+    </form>
+  </div>
+</section>
+
+<section class="page" id="profile">
+  <div class="section-head"><h3>Paramètres du profil</h3></div>
+  <div class="card">
+    <label>Nom affiché</label><input class="field" id="profile-name" value="Client NOVA">
+    <label>Adresse e-mail</label><input class="field" id="profile-email" type="email" placeholder="vous@exemple.fr">
+    <button class="primary" onclick="saveProfile()">Enregistrer</button>
+  </div>
+</section>
+</main>
+</div>
+<div id="toast"></div>
+
+<script>
+let projects=JSON.parse(localStorage.getItem('nova_projects')||'[]');
+let toastTimer;
+
+function notify(message){
+ const t=document.getElementById('toast');
+ t.textContent=message;t.classList.add('show');
+ clearTimeout(toastTimer);
+ toastTimer=setTimeout(()=>t.classList.remove('show'),2800);
+}
+function showPage(id,btn){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+ if(btn)btn.classList.add('active');
+ const titles={overview:'Dashboard',projects:'Mes projets',services:'Nos services',billing:'Facturation',support:'Support',profile:'Paramètres'};
+ document.getElementById('page-title').textContent=titles[id];
+ if(id==='projects')renderProjects();
+}
+function saveProjects(){
+ localStorage.setItem('nova_projects',JSON.stringify(projects));
+ renderProjects();
+}
+function renderProjects(){
+ const active=projects.filter(p=>p.status==='En cours').length;
+ const done=projects.filter(p=>p.status==='Terminé').length;
+ document.getElementById('active-count').textContent=active;
+ document.getElementById('done-count').textContent=done;
+ const html=projects.length?projects.map((p,i)=>`
+ <div class="card project">
+ <div><h4>${escapeHTML(p.name)}</h4><p>${escapeHTML(p.service)} · ${escapeHTML(p.date)}</p></div>
+ <div style="display:flex;gap:10px;align-items:center">
+ <span class="status ${p.status==='Terminé'?'green':''}">${escapeHTML(p.status)}</span>
+ <button class="text-btn" onclick="removeProject(${i})">Supprimer</button>
+ </div></div>`).join(''):'<div class="card empty">Aucun projet pour le moment.</div>';
+ document.getElementById('all-projects').innerHTML=html;
+ document.getElementById('recent-projects').innerHTML=projects.length?html:'<div class="card empty">Aucun projet pour le moment.</div>';
+}
+function escapeHTML(s){
+ return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function newProject(){
+ const name=prompt('Nom de votre projet :');
+ if(!name||!name.trim())return;
+ const service=prompt('Service souhaité (Maison Noire, NOVA Assistant ou Nova Automation) :');
+ if(!service||!service.trim())return;
+ projects.push({name:name.trim(),service:service.trim(),status:'En cours',date:new Date().toLocaleDateString('fr-FR')});
+ saveProjects();notify('Projet ajouté avec succès.');
+}
+function requestService(service){
+ const name=prompt('Donnez un nom à votre demande :');
+ if(!name||!name.trim())return;
+ projects.push({name:name.trim(),service,status:'En cours',date:new Date().toLocaleDateString('fr-FR')});
+ saveProjects();notify('Demande enregistrée sur cet appareil.');
+}
+function removeProject(i){
+ if(!confirm('Supprimer ce projet ?'))return;
+ projects.splice(i,1);saveProjects();notify('Projet supprimé.');
+}
+function saveProfile(){
+ const name=document.getElementById('profile-name').value.trim();
+ if(!name)return notify('Veuillez saisir un nom.');
+ localStorage.setItem('nova_profile_name',name);
+ notify('Profil enregistré sur cet appareil.');
+}
+function sendSupport(e){
+ e.preventDefault();
+ const subject=document.getElementById('support-subject').value;
+ const message=document.getElementById('support-message').value;
+ const email=document.getElementById('support-email').value;
+ const body=encodeURIComponent('Email : '+email+'\n\n'+message);
+ window.location.href='mailto:contact@nova-ai.fr?subject='+encodeURIComponent(subject)+'&body='+body;
+}
+document.getElementById('profile-name').value=localStorage.getItem('nova_profile_name')||'Client NOVA';
+renderProjects();
+</script>
+</body>
+</html>
