@@ -4,7 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NOVA Assistant — AI Customer Support</title>
+<meta name="theme-color" content="#10110f">
+<meta name="description" content="NOVA Assistant — démonstration locale d’une interface de support client conversationnel, conçue par NOVA AI.">
+<title>NOVA Assistant — Démo conversationnelle | NOVA AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -81,7 +83,7 @@ body{background:radial-gradient(ellipse at 75% 0%,#252b1b 0%,var(--bg) 42%);colo
 .send{background:var(--purple);color:#171a10;border-radius:3px}
 :focus-visible{outline:2px solid var(--purple);outline-offset:3px}
 @media(max-width:750px){.chat{border-radius:4px}}
-</style>
+.demo-footer{max-width:1250px;margin:0 auto;padding:0 25px 24px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:11px}.demo-footer a{color:var(--purple);text-decoration:underline;text-underline-offset:4px}:focus-visible{outline:2px solid var(--purple);outline-offset:4px}@media(max-width:750px){.demo-footer{padding:0 14px 20px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}</style>
 </head>
 <body>
 <div class="app">
@@ -99,7 +101,7 @@ body{background:radial-gradient(ellipse at 75% 0%,#252b1b 0%,var(--bg) 42%);colo
  <button class="side-button" data-q="Quels sont vos tarifs ?">Tarifs et services</button>
  <button class="side-button" data-q="Comment vous contacter ?">Contact</button>
  <button class="side-button" data-q="Où êtes-vous situés ?">Localisation</button>
- <div class="notice">NOVA Assistant<br>Une démonstration d'assistance client automatisée conçue par NOVA AI.</div>
+ <div class="notice">NOVA Assistant<br>Une démonstration d’assistance client locale conçue par NOVA AI. Les réponses sont prédéfinies.</div>
 </aside>
 
 <section class="chat">
@@ -122,6 +124,7 @@ body{background:radial-gradient(ellipse at 75% 0%,#252b1b 0%,var(--bg) 42%);colo
 </div>
 </div>
 
+<footer class="demo-footer"><a href="../index.html">← Retour au studio NOVA AI</a><span>Prototype local · Aucune IA connectée</span></footer>
 <script>
 const messages=document.getElementById("messages");
 const input=document.getElementById("chatInput");
