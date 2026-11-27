@@ -299,6 +299,12 @@ footer p{font-size:10px;color:var(--muted);line-height:2}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+/* Finitions NOVA AI — accessibilité et interactions */
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.button,.menu-tab,.nav-action{will-change:transform}
+.gallery-item img{will-change:transform}
+@media(hover:hover){.dish:hover h3{color:var(--gold);transition:color .25s}}
 </style>
 </head>
 
@@ -449,7 +455,7 @@ footer p{font-size:10px;color:var(--muted);line-height:2}
     <a href="#menu">La carte</a>
     <a href="#reservation">Contact</a>
   </div>
-  <p>Projet fictif réalisé par NOVA AI.<br>© <span id="year"></span> Maison Noire.</p>
+  <p>Concept de démonstration réalisé par NOVA AI.<br>© <span id="year"></span> Maison Noire.</p>
 </footer>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photographie agrandie">
