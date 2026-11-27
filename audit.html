@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NOVA AI Audit — outil guidé d'évaluation et de recommandations pour sites web.">
+<title>NOVA AI — Audit Studio</title>
+<style>
+:root{--bg:#0b0c0b;--panel:#141714;--line:#2a302a;--text:#f2f4ed;--muted:#9ba398;--lime:#c8f169;--red:#e5a19a;--amber:#e8c879}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif}.shell{max-width:1450px;margin:auto;padding:26px}.top{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid var(--line)}.brand{font-weight:900;letter-spacing:2px}.brand span{color:var(--lime)}.back{color:var(--muted);font-size:13px;text-decoration:none}.back:hover{color:var(--lime)}.hero{padding:36px 0 25px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--lime);font-weight:800}.hero h1{font-size:clamp(32px,5vw,55px);letter-spacing:-2px;margin:12px 0}.hero p{color:var(--muted);line-height:1.6;max-width:680px;margin:0}.layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.95fr);gap:18px;align-items:start}.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.panel h2{font-size:17px;margin:0 0 5px}.sub{color:var(--muted);font-size:12px;margin:0 0 22px}.field{margin-bottom:15px}.field label{display:block;color:#cbd0c7;font-size:12px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;padding:12px;background:#0b0d0b;border:1px solid #343a34;border-radius:10px;color:var(--text);outline:none}.field textarea{min-height:76px;resize:vertical}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lime)}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.criteria{display:grid;gap:10px;margin-top:8px}.criterion{padding:14px;border:1px solid var(--line);border-radius:12px;background:#101310}.criterion-top{display:flex;justify-content:space-between;gap:12px;align-items:center}.criterion strong{font-size:13px}.criterion p{font-size:11px;color:var(--muted);margin:5px 0 12px;line-height:1.4}.rating{display:flex;gap:6px;flex-wrap:wrap}.rating label{display:flex;align-items:center;justify-content:center;width:34px;height:32px;border:1px solid #3b433b;border-radius:8px;font-size:12px;cursor:pointer;color:var(--muted)}.rating input{position:absolute;opacity:0;pointer-events:none}.rating label:has(input:checked){background:var(--lime);color:#141710;border-color:var(--lime);font-weight:900}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid var(--line);background:#222722;color:var(--text);padding:12px 15px;border-radius:10px;font-weight:700;font-size:12px;cursor:pointer}.btn.primary{background:var(--lime);color:#111;border-color:var(--lime)}.btn:hover{filter:brightness(1.08)}.scorebox{padding:18px;border:1px solid var(--line);border-radius:14px;background:#101310}.scoreline{display:flex;justify-content:space-between;align-items:center;gap:10px}.score{font-size:46px;font-weight:900;letter-spacing:-2px}.score small{font-size:15px;color:var(--muted);letter-spacing:0}.meter{height:8px;border-radius:10px;background:#303630;overflow:hidden;margin:12px 0 8px}.meter div{height:100%;width:0;background:var(--lime);transition:width .2s}.verdict{font-size:12px;color:var(--lime);font-weight:800}.scorehint{font-size:11px;color:var(--muted);line-height:1.5}.report{white-space:pre-wrap;min-height:300px;background:#0b0d0b;border:1px solid var(--line);border-radius:12px;padding:16px;color:#dfe4da;font-size:12px;line-height:1.7;margin-top:14px;overflow-wrap:anywhere}.disclaimer{padding:13px 15px;border:1px solid #4b512f;background:#171b11;border-radius:12px;color:#cbd6b1;font-size:11px;line-height:1.5;margin-top:14px}.footer{text-align:center;color:#687067;font-size:11px;padding:30px 0 10px}
+@media(max-width:950px){.layout{grid-template-columns:1fr}}@media(max-width:550px){.shell{padding:16px}.panel{padding:16px}.two{grid-template-columns:1fr}.criterion-top{align-items:flex-start;flex-direction:column}.score{font-size:38px}}
+</style>
+</head>
+<body><div class="shell">
+<header class="top"><div class="brand">NOVA <span>AI</span> <small style="font-weight:500;letter-spacing:0;color:#888">/ AUDIT STUDIO</small></div><a class="back" href="../index.html">← Retour à NOVA AI</a></header>
+<section class="hero"><div class="eyebrow">OUTIL COMMERCIAL · 02</div><h1>Website Audit<span style="color:var(--lime)">.</span></h1><p>Évaluez un site avec une grille simple, identifiez les points à améliorer et préparez un rapport clair et personnalisé. Chaque note doit correspondre à une observation réelle.</p></section>
+<main class="layout">
+<section class="panel">
+<h2>1. Informations du prospect</h2><p class="sub">Identifiez le site que vous examinez.</p>
+<div class="field"><label for="company">Nom de l'entreprise</label><input id="company" placeholder="Ex. Atelier Martin"></div>
+<div class="two"><div class="field"><label for="site">Adresse du site web</label><input id="site" placeholder="https://exemple.fr" type="url"></div><div class="field"><label for="sector">Secteur</label><select id="sector"><option>Artisan / Bâtiment</option><option>Restaurant / Café</option><option>Commerce local</option><option>Services</option><option>Bien-être / Coaching</option><option>Autre</option></select></div></div>
+<div class="field"><label for="city">Ville</label><input id="city" placeholder="Ex. Mâcon"></div>
+<div class="field"><label for="observations">Observations concrètes (facultatif)</label><textarea id="observations" placeholder="Ex. Le numéro de téléphone est difficile à trouver sur mobile…"></textarea></div>
+<h2 style="margin-top:24px">2. Grille d'évaluation</h2><p class="sub">Notez chaque critère de 0 à 5. 0 = absent / très insuffisant · 5 = excellent.</p>
+<div class="criteria" id="criteria"></div>
+<div class="actions"><button class="btn" id="openSite">↗ Ouvrir le site du prospect</button><button class="btn" id="reset">Réinitialiser</button></div>
+</section>
+<section class="panel">
+<h2>3. Rapport d'audit</h2><p class="sub">Le score et les recommandations évoluent avec tes notes.</p>
+<div class="scorebox"><div class="scoreline"><div><div class="eyebrow">SCORE GLOBAL</div><div class="score"><span id="score">—</span><small> / 35</small></div></div><div class="verdict" id="verdict">À ÉVALUER</div></div><div class="meter"><div id="bar"></div></div><div class="scorehint">Score indicatif basé uniquement sur les 7 critères renseignés. Il ne constitue pas un audit technique automatisé.</div></div>
+<pre class="report" id="report" aria-live="polite">Renseigne le nom de l'entreprise et attribue tes notes pour générer un rapport personnalisé.</pre>
+<div class="actions"><button class="btn primary" id="copy">Copier le rapport</button><button class="btn" id="download">Télécharger (.txt)</button></div>
+<div class="disclaimer">Important : cet outil ne visite pas et ne scanne pas automatiquement les sites. Vérifie chaque point toi-même. Le rapport est une aide à la préparation, pas une expertise technique certifiée. Ne saisis aucune donnée personnelle confidentielle.</div>
+</section></main>
+<footer class="footer">NOVA AI · AUDIT STUDIO · PROTOTYPE D'ANALYSE GUIDÉE</footer></div>
+<script>
+const definitions=[
+["Première impression","Le site inspire-t-il confiance dès les premières secondes ?"],
+["Affichage mobile","Le contenu est-il lisible et facile à utiliser sur smartphone ?"],
+["Clarté de l'offre","Comprend-on rapidement les services ou produits proposés ?"],
+["Navigation","Les menus et les pages sont-ils faciles à parcourir ?"],
+["Contact et conversion","Le téléphone, l'e-mail ou la prise de rendez-vous sont-ils faciles à trouver ?"],
+["Confiance et réassurance","Les avis, réalisations, garanties ou informations utiles sont-ils visibles ?"],
+["Lisibilité et contenu","Les textes, titres et images sont-ils clairs et bien organisés ?"]
+];
+const $=id=>document.getElementById(id);
+const criteria=$("criteria");
+definitions.forEach((item,i)=>{const div=document.createElement("div");div.className="criterion";const title=document.createElement("strong");title.textContent=(i+1)+". "+item[0];const desc=document.createElement("p");desc.textContent=item[1];const top=document.createElement("div");top.className="criterion-top";top.append(title);const rating=document.createElement("div");rating.className="rating";for(let n=0;n<=5;n++){const label=document.createElement("label");const input=document.createElement("input");input.type="radio";input.name="criterion"+i;input.value=String(n);input.addEventListener("change",update);label.append(input,document.createTextNode(String(n)));rating.append(label)}div.append(top,desc,rating);criteria.append(div)});
+function getScores(){return definitions.map((d,i)=>{const selected=document.querySelector('input[name="criterion'+i+'"]:checked');return selected?Number(selected.value):null})}
+function normalizeUrl(v){if(!v)return "";try{const u=new URL(v);return ["http:","https:"].includes(u.protocol)?u.href:""}catch{return ""}}
+function makeReport(){
+const company=$("company").value.trim()||"Entreprise à préciser";const site=$("site").value.trim();const sector=$("sector").value;const city=$("city").value.trim()||"Non précisée";const observations=$("observations").value.trim();const scores=getScores();const complete=scores.every(v=>v!==null);const total=scores.reduce((a,v)=>a+(v===null?0:v),0);const pct=Math.round(total/35*100);
+let verdict=complete?(pct>=85?"TRÈS BONNE BASE":pct>=65?"BASE SATISFAISANTE":pct>=45?"PLUSIEURS AXES D'AMÉLIORATION":"REFONTE À ÉTUDIER"):"ÉVALUATION EN COURS";
+$("score").textContent=complete?total:"—";$("verdict").textContent=verdict;$("bar").style.width=(complete?pct:Math.round(scores.filter(v=>v!==null).length/7*100))+"%";
+const recommendations=scores.map((v,i)=>({v,i})).filter(x=>x.v!==null&&x.v<=3).sort((a,b)=>a.v-b.v).map(({i})=>{const tips=[
+"Retravailler la première section : promesse claire, titre précis et visuel cohérent.",
+"Optimiser la version mobile : tailles de texte, espacements et boutons faciles à toucher.",
+"Présenter les services avec des intitulés simples et des bénéfices concrets.",
+"Clarifier le menu et réduire les étapes nécessaires pour trouver une information.",
+"Mettre en évidence un appel à l'action et rendre les coordonnées accessibles.",
+"Ajouter des éléments de réassurance vérifiables : avis authentiques, réalisations ou présentation de l'équipe.",
+"Structurer les textes avec des titres courts, des paragraphes aérés et des visuels pertinents."
+];return "• "+definitions[i][0]+" : "+tips[i]});
+let report="NOVA AI — COMPTE RENDU D'ANALYSE DE SITE\n";report+="========================================\n\n";report+="ENTREPRISE : "+company+"\nSECTEUR : "+sector+"\nVILLE : "+city+"\nSITE : "+(site||"Non renseigné")+"\nDATE : "+new Date().toLocaleDateString("fr-FR")+"\n\n";
+report+="SCORE : "+(complete?total+"/35 ("+pct+" %)":"Évaluation incomplète")+"\nAPPRÉCIATION : "+verdict+"\n\nDÉTAIL DES CRITÈRES\n";scores.forEach((v,i)=>{report+=(i+1)+". "+definitions[i][0]+" : "+(v===null?"Non évalué":v+"/5")+"\n"});
+report+="\nPISTES D'AMÉLIORATION\n";report+=recommendations.length?recommendations.join("\n"):"• Aucun point faible noté à 3/5 ou moins. Continuer à vérifier les détails et la cohérence du parcours utilisateur.";
+if(observations)report+="\n\nOBSERVATIONS RELEVÉES\n"+observations;
+report+="\n\nPROPOSITION DE SUITE\nUn échange court permettrait de prioriser les améliorations et de définir un périmètre adapté aux besoins de l'entreprise.";
+report+="\n\nDocument préparatoire réalisé avec NOVA AI. Évaluation manuelle et indicative, fondée sur les observations saisies. Les constats doivent être vérifiés avant tout envoi.";
+$("report").textContent=report;
+}
+function update(){makeReport()}
+["company","site","sector","city","observations"].forEach(id=>$(id).addEventListener("input",update));
+$("openSite").addEventListener("click",()=>{const url=normalizeUrl($("site").value.trim());if(!url){alert("Ajoute une adresse complète commençant par https://");return}window.open(url,"_blank","noopener,noreferrer")});
+$("copy").addEventListener("click",async()=>{try{await navigator.clipboard.writeText($("report").textContent);$("copy").textContent="Copié ✓";setTimeout(()=>$("copy").textContent="Copier le rapport",1600)}catch{alert("Copie indisponible : sélectionne le texte du rapport et copie-le manuellement.")}});
+$("download").addEventListener("click",()=>{const blob=new Blob([$("report").textContent],{type:"text/plain;charset=utf-8"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="audit-nova-ai.txt";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url)});
+$("reset").addEventListener("click",()=>{$("company").value="";$("site").value="";$("city").value="";$("observations").value="";$("sector").selectedIndex=0;document.querySelectorAll('.rating input').forEach(x=>x.checked=false);update()});
+update();
+</script></body></html>
