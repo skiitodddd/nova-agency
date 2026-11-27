@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10110f">
+<meta name="description" content="NOVA AI Client Studio — espace de pilotage interne en démonstration.">
+<title>Client Studio — NOVA AI</title>
+<style>
+:root{--bg:#10110f;--panel:#171916;--panel2:#1d201c;--line:#2a2e28;--text:#f2f3ed;--muted:#92988e;--lime:#c8f169;--lime2:#a9d94c;--red:#ff7777;--amber:#f3c76a;--blue:#8eb8ff;--radius:17px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.app{min-height:100vh;display:grid;grid-template-columns:248px 1fr}.sidebar{background:#131512;border-right:1px solid var(--line);padding:25px 17px;display:flex;flex-direction:column;gap:30px;position:sticky;top:0;height:100vh}.brand{display:flex;align-items:center;gap:11px;padding:0 9px}.brand-mark{height:34px;width:34px;border-radius:10px;background:var(--lime);color:#111;font-weight:950;display:grid;place-items:center;font-size:17px}.brand-name{font-weight:850;letter-spacing:2px;font-size:14px}.brand-sub{font-size:10px;color:var(--muted);letter-spacing:1.6px}.nav-label{font-size:10px;color:#687064;text-transform:uppercase;letter-spacing:1.6px;padding:0 11px;margin:0 0 8px}.nav{display:grid;gap:5px}.nav button{background:transparent;border:0;color:#aab0a5;padding:11px 12px;border-radius:10px;text-align:left;display:flex;gap:12px;align-items:center;font-size:13px;transition:.2s}.nav button:hover,.nav button.active{background:#252a21;color:var(--lime)}.nav button span:first-child{width:18px;text-align:center;font-size:16px}.side-bottom{margin-top:auto}.status-card{border:1px solid var(--line);background:#191c17;border-radius:13px;padding:13px}.status-dot{height:7px;width:7px;background:var(--lime);border-radius:50%;display:inline-block;margin-right:7px;box-shadow:0 0 10px #c8f16680}.status-card small{color:var(--muted);display:block;margin-top:5px;font-size:11px}.main{min-width:0}.topbar{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 38px;position:sticky;top:0;background:#10110feF;backdrop-filter:blur(16px);z-index:5}.crumb{color:var(--muted);font-size:12px}.crumb b{color:var(--text);font-weight:650}.top-actions{display:flex;align-items:center;gap:12px}.avatar{height:34px;width:34px;border-radius:50%;display:grid;place-items:center;background:#2c3424;color:var(--lime);font-weight:800}.content{max-width:1440px;margin:auto;padding:35px 38px 60px}.page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:27px}.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--lime);font-weight:750}.page-head h1{font-size:30px;letter-spacing:-1.1px;margin:5px 0 4px}.page-head p{margin:0;color:var(--muted);font-size:13px}.btn{border:1px solid var(--line);background:#20241e;color:var(--text);padding:10px 15px;border-radius:10px;font-weight:650;font-size:12px;display:inline-flex;align-items:center;gap:8px;transition:.2s}.btn:hover{border-color:#65734d;transform:translateY(-1px)}.btn.primary{background:var(--lime);border-color:var(--lime);color:#111;font-weight:800}.btn.primary:hover{background:#d7ff80}.btn.ghost{background:transparent}.btn.danger{color:var(--red)}.grid{display:grid;gap:15px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:18px}.stat,.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius)}.stat{padding:18px 19px}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.stat-icon{color:var(--lime);font-size:16px}.stat-value{font-size:29px;font-weight:800;letter-spacing:-1px;margin:9px 0 2px}.stat-note{font-size:11px;color:var(--muted)}.columns{grid-template-columns:1.45fr 1fr}.card{padding:19px}.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px;gap:10px}.card h2{font-size:14px;margin:0;font-weight:750}.card-sub{font-size:11px;color:var(--muted);margin-top:3px}.text-link{color:var(--lime);font-size:11px;font-weight:700;background:none;border:0}.activity{display:grid;gap:0}.activity-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #252923}.activity-row:last-child{border:0}.activity-icon{height:31px;width:31px;border-radius:9px;background:#272e20;color:var(--lime);display:grid;place-items:center;flex-shrink:0}.activity-row b{font-size:12px;display:block}.activity-row small{color:var(--muted);font-size:11px}.project-list{display:grid;gap:12px}.project{padding:12px;background:#1c201a;border:1px solid #292e26;border-radius:12px}.project-top{display:flex;justify-content:space-between;gap:10px}.project b{font-size:12px}.project small{color:var(--muted);display:block;font-size:11px;margin-top:2px}.progress{height:5px;background:#30352d;border-radius:10px;overflow:hidden;margin-top:11px}.progress i{height:100%;display:block;background:var(--lime);border-radius:10px}.pill{display:inline-flex;align-items:center;padding:4px 8px;border-radius:30px;font-size:10px;font-weight:750;background:#2a3024;color:var(--lime);white-space:nowrap}.pill.amber{background:#39301d;color:var(--amber)}.pill.blue{background:#202b3b;color:var(--blue)}.pill.gray{background:#292c28;color:#b3b8ae}.pill.red{background:#3a2424;color:var(--red)}.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:15px;flex-wrap:wrap}.search{position:relative;flex:1;min-width:190px}.search input{width:100%;padding:10px 13px 10px 35px;background:var(--panel);border:1px solid var(--line);border-radius:10px;color:var(--text);outline:none}.search:before{content:"⌕";position:absolute;left:13px;top:5px;color:var(--muted);font-size:20px}.field,select,textarea{width:100%;background:#11130f;color:var(--text);border:1px solid #343a30;border-radius:9px;padding:10px 11px;outline:none}.field:focus,select:focus,textarea:focus,.search input:focus{border-color:#829e50}.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;min-width:650px}.table th{text-align:left;color:#778071;font-size:10px;letter-spacing:1px;text-transform:uppercase;padding:11px 12px;border-bottom:1px solid var(--line)}.table td{padding:14px 12px;border-bottom:1px solid #252923;font-size:12px}.table tr:last-child td{border-bottom:0}.table td small{display:block;color:var(--muted);font-size:10px}.table .name{font-weight:700}.empty{text-align:center;color:var(--muted);padding:35px!important}.two{grid-template-columns:1fr 1fr}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-group{display:grid;gap:6px}.form-group.full{grid-column:1/-1}.form-group label{font-size:11px;color:#aab0a5;font-weight:650}.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.task{display:flex;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.task:last-child{border:0}.task input{accent-color:var(--lime);height:16px;width:16px}.task label{flex:1;font-size:12px}.task.done label{text-decoration:line-through;color:var(--muted)}.quote-total{background:#22291d;border:1px solid #414c31;border-radius:12px;padding:17px;display:flex;justify-content:space-between;align-items:center;margin-top:14px}.quote-total strong{font-size:25px;color:var(--lime)}.notice{border:1px solid #594a26;background:#292316;color:#e8d39e;border-radius:11px;padding:12px 14px;font-size:11px;margin-bottom:17px}.settings-row{padding:15px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px}.settings-row:last-child{border:0}.settings-row b{font-size:12px}.settings-row small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.mobile-menu{display:none}.hidden{display:none!important}.modal-backdrop{position:fixed;inset:0;background:#000a;display:grid;place-items:center;padding:18px;z-index:20}.modal{width:min(560px,100%);background:#191c17;border:1px solid #3a4035;border-radius:18px;padding:22px;max-height:90vh;overflow:auto;box-shadow:0 25px 80px #0009}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:17px}.modal-head h2{margin:0;font-size:17px}.close{background:transparent;color:var(--muted);border:0;font-size:23px}.toast{position:fixed;right:22px;bottom:22px;background:#d3f78a;color:#10110f;padding:12px 17px;border-radius:10px;font-size:12px;font-weight:750;z-index:30;box-shadow:0 10px 35px #0007}.footer-note{color:#697164;font-size:10px;margin-top:22px}
+@media(max-width:1050px){.app{grid-template-columns:210px 1fr}.content{padding:28px 24px}.topbar{padding:0 24px}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.app{display:block}.sidebar{position:fixed;left:-260px;top:0;width:248px;z-index:15;transition:.25s;box-shadow:20px 0 50px #0008}.sidebar.open{left:0}.mobile-menu{display:inline-flex}.topbar{height:64px;padding:0 16px}.content{padding:24px 15px 45px}.page-head{align-items:flex-start;flex-direction:column}.page-head h1{font-size:25px}.stats{gap:9px}.stat{padding:14px}.stat-value{font-size:24px}.columns,.two{grid-template-columns:1fr}.top-actions .top-label{display:none}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.page-head .btn{width:100%;justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+ <div class="brand"><div class="brand-mark">N</div><div><div class="brand-name">NOVA AI</div><div class="brand-sub">CLIENT STUDIO</div></div></div>
+ <div><div class="nav-label">Espace de travail</div><nav class="nav" id="nav">
+ <button class="active" data-page="dashboard"><span>◫</span>Vue d'ensemble</button>
+ <button data-page="clients"><span>♙</span>Clients</button>
+ <button data-page="projects"><span>▣</span>Projets</button>
+ <button data-page="quotes"><span>◇</span>Devis</button>
+ <button data-page="tasks"><span>☷</span>Tâches</button>
+ </nav></div>
+ <div><div class="nav-label">Configuration</div><nav class="nav"><button data-page="settings"><span>⚙</span>Paramètres</button></nav></div>
+ <div class="side-bottom"><div class="status-card"><span class="status-dot"></span><b style="font-size:11px">Espace de démonstration</b><small>Données enregistrées dans ce navigateur uniquement.</small></div><div style="padding:15px 10px 0;color:#646b60;font-size:10px">NOVA AI · CLIENT STUDIO v1.0</div></div>
+</aside>
+<main class="main">
+ <header class="topbar"><div style="display:flex;align-items:center;gap:12px"><button class="btn ghost mobile-menu" id="mobileMenu">☰</button><div class="crumb">NOVA AI <span style="color:#586052">/</span> <b id="crumb">Vue d'ensemble</b></div></div><div class="top-actions"><span class="top-label" style="font-size:11px;color:var(--muted)">Espace interne</span><div class="avatar">N</div></div></header>
+ <div class="content" id="view"></div>
+</main>
+</div>
+<div id="modalRoot"></div><div id="toastRoot"></div>
+<script>
+(function(){
+"use strict";
+const KEY="novaClientStudio_v1";
+const initial={
+ clients:[
+ {id:1,name:"Atelier Démo",contact:"Camille Martin",email:"contact@exemple.fr",phone:"",sector:"Artisanat",status:"Prospect",notes:"Entreprise fictive pour tester le tableau de bord."},
+ {id:2,name:"Maison Exemple",contact:"Alex Bernard",email:"bonjour@exemple.fr",phone:"",sector:"Restauration",status:"Client",notes:"Données de démonstration uniquement."}
+ ],
+ projects:[
+ {id:1,name:"Site vitrine — Atelier Démo",clientId:1,type:"Site vitrine",status:"En cours",progress:65,due:"2026-12-15",notes:"Prototype de démonstration."},
+ {id:2,name:"Landing page — Maison Exemple",clientId:2,type:"Landing page",status:"À démarrer",progress:10,due:"2026-12-20",notes:"Projet fictif."}
+ ],
+ tasks:[
+ {id:1,title:"Préparer le brief client",done:false,projectId:1},
+ {id:2,title:"Valider la structure des pages",done:true,projectId:1},
+ {id:3,title:"Préparer la maquette responsive",done:false,projectId:1},
+ {id:4,title:"Vérifier les coordonnées",done:false,projectId:2}
+ ],
+ quotes:[]
+};
+let data=load();
+let page="dashboard";
+function load(){try{const s=localStorage.getItem(KEY);return s?JSON.parse(s):structuredClone(initial)}catch(e){return JSON.parse(JSON.stringify(initial))}}
+function save(){localStorage.setItem(KEY,JSON.stringify(data))}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function money(n){return new Intl.NumberFormat("fr-FR",{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(Number(n)||0)}
+function clientName(id){const c=data.clients.find(x=>x.id===Number(id));return c?c.name:"Client non défini"}
+function pill(status){let cl=status==="Client"||status==="Terminé"||status==="Payé"?"":" "+(status==="En cours"||status==="Envoyé"?"blue":status==="À démarrer"||status==="À valider"?"amber":status==="Annulé"?"red":"gray");return '<span class="pill'+cl+'">'+esc(status)+'</span>'}
+function header(kicker,title,desc,action){return '<div class="page-head"><div><div class="eyebrow">'+kicker+'</div><h1>'+title+'</h1><p>'+desc+'</p></div>'+(action||"")+'</div>'}
+function btn(label,action,primary){return '<button class="btn '+(primary?"primary":"")+'" data-action="'+action+'">'+label+'</button>'}
+function render(){
+ document.getElementById("crumb").textContent=({dashboard:"Vue d'ensemble",clients:"Clients",projects:"Projets",quotes:"Devis",tasks:"Tâches",settings:"Paramètres"})[page];
+ document.querySelectorAll("[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+ const root=document.getElementById("view");
+ root.innerHTML=({dashboard:dashboard,clients:clients,projects:projects,quotes:quotes,tasks:tasks,settings:settings})[page]();
+ bind();
+}
+function dashboard(){
+ const active=data.projects.filter(p=>p.status!=="Terminé").length;
+ const prospects=data.clients.filter(c=>c.status==="Prospect").length;
+ const total=data.quotes.reduce((s,q)=>s+Number(q.amount||0),0);
+ return header("ESPACE DE PILOTAGE","Vue d'ensemble","Voici l'état de ton activité NOVA AI.",btn("+ Nouveau client","new-client",true))+
+ '<div class="grid stats">'+
+ stat("Clients",data.clients.length,"Fiches enregistrées","♙")+
+ stat("Projets actifs",active,"Hors projets terminés","▣")+
+ stat("Prospects",prospects,"À suivre et recontacter","◎")+
+ stat("Devis préparés",data.quotes.length,money(total)+" au total","◇")+
+ '</div><div class="grid columns"><section class="card"><div class="card-head"><div><h2>Projets récents</h2><div class="card-sub">Avancement des projets suivis</div></div><button class="text-link" data-page="projects">Tout voir →</button></div><div class="project-list">'+(data.projects.length?data.projects.slice(0,4).map(p=>'<div class="project"><div class="project-top"><div><b>'+esc(p.name)+'</b><small>'+esc(clientName(p.clientId))+'</small></div>'+pill(p.status)+'</div><div class="progress"><i style="width:'+Math.min(100,Math.max(0,Number(p.progress)||0))+'%"></i></div><small>'+Number(p.progress)||0+'% terminé</small></div>').join(""):'<div class="empty">Aucun projet pour le moment.</div>')+'</div></section><section class="card"><div class="card-head"><div><h2>À faire</h2><div class="card-sub">Les prochaines actions</div></div><button class="text-link" data-page="tasks">Voir les tâches →</button></div><div class="activity">'+(data.tasks.filter(t=>!t.done).slice(0,5).map(t=>'<div class="activity-row"><div class="activity-icon">✓</div><div><b>'+esc(t.title)+'</b><small>'+esc(t.projectId?data.projects.find(p=>p.id===t.projectId)?.name||"Projet supprimé":"Tâche générale")+'</small></div></div>').join("")||'<div class="empty">Tout est à jour !</div>')+'</div></section></div><div class="footer-note">Les éléments préremplis sont fictifs. Remplace-les par tes propres données de test.</div>';
+}
+function stat(label,value,note,icon){return '<div class="stat"><div class="stat-top"><span>'+label+'</span><span class="stat-icon">'+icon+'</span></div><div class="stat-value">'+value+'</div><div class="stat-note">'+note+'</div></div>'}
+function clients(){
+ return header("RELATION CLIENT","Clients","Centralise les prospects et les contacts.",btn("+ Ajouter un client","new-client",true))+
+ '<div class="toolbar"><div class="search"><input id="clientSearch" placeholder="Rechercher un client, un contact..."></div><select id="clientFilter" style="width:auto;min-width:150px"><option value="">Tous les statuts</option><option>Prospect</option><option>Client</option><option>Inactif</option></select></div>'+
+ '<section class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Entreprise</th><th>Contact</th><th>Secteur</th><th>Statut</th><th></th></tr></thead><tbody id="clientRows">'+clientRows(data.clients)+'</tbody></table></div></section>';
+}
+function clientRows(list){return list.length?list.map(c=>'<tr><td class="name">'+esc(c.name)+'<small>'+esc(c.email||"Aucun email")+'</small></td><td>'+esc(c.contact||"—")+'</td><td>'+esc(c.sector||"—")+'</td><td>'+pill(c.status)+'</td><td><button class="text-link" data-action="edit-client" data-id="'+c.id+'">Modifier</button> <button class="text-link" data-action="delete-client" data-id="'+c.id+'">×</button></td></tr>').join(""):'<tr><td colspan="5" class="empty">Aucun client trouvé.</td></tr>'}
+function projects(){
+ return header("PRODUCTION","Projets","Suis les créations de sites et les livrables.",btn("+ Nouveau projet","new-project",true))+
+ '<div class="toolbar"><div class="search"><input id="projectSearch" placeholder="Rechercher un projet..."></div><select id="projectFilter" style="width:auto;min-width:150px"><option value="">Tous les statuts</option><option>À démarrer</option><option>En cours</option><option>À valider</option><option>Terminé</option></select></div><section class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Projet</th><th>Client</th><th>Échéance</th><th>Avancement</th><th>Statut</th><th></th></tr></thead><tbody id="projectRows">'+projectRows(data.projects)+'</tbody></table></div></section>';
+}
+function projectRows(list){return list.length?list.map(p=>'<tr><td class="name">'+esc(p.name)+'<small>'+esc(p.type)+'</small></td><td>'+esc(clientName(p.clientId))+'</td><td>'+esc(p.due||"—")+'</td><td><div style="display:flex;align-items:center;gap:8px"><div class="progress" style="width:65px;margin:0"><i style="width:'+p.progress+'%"></i></div>'+p.progress+'%</div></td><td>'+pill(p.status)+'</td><td><button class="text-link" data-action="edit-project" data-id="'+p.id+'">Modifier</button> <button class="text-link" data-action="delete-project" data-id="'+p.id+'">×</button></td></tr>').join(""):'<tr><td colspan="6" class="empty">Aucun projet enregistré.</td></tr>'}
+function quotes(){
+ return header("ESTIMATION","Devis","Prépare une estimation indicative avant validation.",btn("+ Préparer un devis","new-quote",true))+
+ '<div class="notice">Outil de préparation uniquement : ce document n'est pas un devis contractuel. Les tarifs, taxes, conditions et engagements doivent être vérifiés et validés par un adulte responsable avant tout envoi.</div>'+
+ '<section class="card"><div class="card-head"><div><h2>Historique des estimations</h2><div class="card-sub">Montants enregistrés dans ce navigateur</div></div></div><div class="table-wrap"><table class="table"><thead><tr><th>Référence</th><th>Client</th><th>Prestation</th><th>Montant indicatif</th><th>Date</th><th></th></tr></thead><tbody>'+(data.quotes.length?data.quotes.map(q=>'<tr><td class="name">'+esc(q.ref)+'</td><td>'+esc(clientName(q.clientId))+'</td><td>'+esc(q.service)+'</td><td>'+money(q.amount)+'</td><td>'+esc(q.date)+'</td><td><button class="text-link" data-action="delete-quote" data-id="'+q.id+'">Supprimer</button></td></tr>').join(""):'<tr><td colspan="6" class="empty">Aucune estimation. Clique sur « Préparer un devis » pour commencer.</td></tr>')+'</tbody></table></div></section>';
+}
+function tasks(){
+ return header("ORGANISATION","Tâches","Garde une trace des prochaines étapes.",btn("+ Ajouter une tâche","new-task",true))+
+ '<div class="grid two"><section class="card"><div class="card-head"><div><h2>À faire</h2><div class="card-sub">Actions non terminées</div></div><span class="pill amber">'+data.tasks.filter(t=>!t.done).length+'</span></div>'+taskList(false)+'</section><section class="card"><div class="card-head"><div><h2>Terminées</h2><div class="card-sub">Actions complétées</div></div><span class="pill">'+data.tasks.filter(t=>t.done).length+'</span></div>'+taskList(true)+'</section></div>';
+}
+function taskList(done){const list=data.tasks.filter(t=>t.done===done);return list.length?list.map(t=>'<div class="task '+(t.done?'done':'')+'"><input type="checkbox" data-task="'+t.id+'" '+(t.done?'checked':'')+'><label>'+esc(t.title)+'<small style="display:block;color:var(--muted)">'+esc(t.projectId?data.projects.find(p=>p.id===t.projectId)?.name||"Projet supprimé":"Tâche générale")+'</small></label><button class="text-link" data-action="delete-task" data-id="'+t.id+'">×</button></div>').join(""):'<div class="empty">Rien ici pour le moment.</div>'}
+function settings(){
+ return header("CONFIGURATION","Paramètres","Gère les informations de ton espace de travail.","")+
+ '<section class="card"><div class="settings-row"><div><b>Nom de l'espace</b><small>Identité affichée dans le tableau de bord</small></div><strong>NOVA AI</strong></div><div class="settings-row"><div><b>Stockage</b><small>Les données restent dans le stockage local de ce navigateur.</small></div><span class="pill amber">Local uniquement</span></div><div class="settings-row"><div><b>Exporter les données</b><small>Télécharge une copie JSON de tes fiches et projets.</small></div><button class="btn" data-action="export">Exporter JSON ↓</button></div><div class="settings-row"><div><b>Réinitialiser la démonstration</b><small>Supprime les modifications locales et restaure les exemples fictifs.</small></div><button class="btn danger" data-action="reset">Réinitialiser</button></div></section><div class="notice" style="margin-top:16px">Sécurité : cette version n'a ni compte utilisateur, ni mot de passe, ni synchronisation cloud. N'y stocke aucune donnée personnelle ou confidentielle de vrais clients. Le dépôt et la page hébergée sur GitHub Pages sont publics.</div>';
+}
+function modal(title,body){document.getElementById("modalRoot").innerHTML='<div class="modal-backdrop" id="backdrop"><div class="modal"><div class="modal-head"><h2>'+title+'</h2><button class="close" data-action="close-modal">×</button></div>'+body+'</div></div>';document.getElementById("backdrop").addEventListener("click",e=>{if(e.target.id==="backdrop")closeModal()})}
+function closeModal(){document.getElementById("modalRoot").innerHTML=""}
+function field(label,name,value,type,placeholder){return '<div class="form-group"><label>'+label+'</label><input class="field" name="'+name+'" type="'+(type||"text")+'" value="'+esc(value||"")+'" placeholder="'+(placeholder||"")+'"></div>'}
+function clientForm(id){
+ const c=data.clients.find(x=>x.id===Number(id))||{};
+ modal(id?"Modifier le client":"Ajouter un client",'<form id="clientForm"><div class="form-grid">'+field("Entreprise *","name",c.name,"text","Nom de l'entreprise")+field("Nom du contact","contact",c.contact)+field("Email","email",c.email,"email")+field("Téléphone","phone",c.phone,"tel")+field("Secteur","sector",c.sector)+ '<div class="form-group"><label>Statut</label><select name="status" class="field">'+["Prospect","Client","Inactif"].map(s=>'<option '+(c.status===s?'selected':'')+'>'+s+'</option>').join("")+'</select></div><div class="form-group full"><label>Notes</label><textarea name="notes" rows="3" class="field">'+esc(c.notes||"")+'</textarea></div></div><div class="form-actions"><button type="button" class="btn" data-action="close-modal">Annuler</button><button class="btn primary">Enregistrer</button></div></form>');
+ document.getElementById("clientForm").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),o=Object.fromEntries(f.entries());if(!o.name.trim())return toast("Le nom de l'entreprise est obligatoire.");if(id)Object.assign(c,o);else data.clients.unshift({...o,id:Date.now()});save();closeModal();render();toast("Fiche client enregistrée.")};
+}
+function projectForm(id){
+ const p=data.projects.find(x=>x.id===Number(id))||{};
+ const options=data.clients.map(c=>'<option value="'+c.id+'" '+(Number(p.clientId)===c.id?'selected':'')+'>'+esc(c.name)+'</option>').join("");
+ modal(id?"Modifier le projet":"Nouveau projet",'<form id="projectForm"><div class="form-grid">'+field("Nom du projet *","name",p.name,"text","Ex. Site vitrine — Entreprise")+'<div class="form-group"><label>Client</label><select name="clientId" class="field">'+options+'</select></div><div class="form-group"><label>Type de projet</label><select name="type" class="field">'+["Site vitrine","Landing page","Refonte","Automatisation","Autre"].map(s=>'<option '+(p.type===s?'selected':'')+'>'+s+'</option>').join("")+'</select></div><div class="form-group"><label>Statut</label><select name="status" class="field">'+["À démarrer","En cours","À valider","Terminé"].map(s=>'<option '+(p.status===s?'selected':'')+'>'+s+'</option>').join("")+'</select></div>'+field("Avancement (%)","progress",p.progress??0,"number")+field("Échéance","due",p.due,"date")+'<div class="form-group full"><label>Notes</label><textarea class="field" name="notes" rows="3">'+esc(p.notes||"")+'</textarea></div></div><div class="form-actions"><button type="button" class="btn" data-action="close-modal">Annuler</button><button class="btn primary">Enregistrer</button></div></form>');
+ document.getElementById("projectForm").onsubmit=e=>{e.preventDefault();const o=Object.fromEntries(new FormData(e.target).entries());if(!o.name.trim())return toast("Le nom du projet est obligatoire.");o.progress=Math.min(100,Math.max(0,Number(o.progress)||0));o.clientId=Number(o.clientId);if(id)Object.assign(p,o);else data.projects.unshift({...o,id:Date.now()});save();closeModal();render();toast("Projet enregistré.")};
+}
+function quoteForm(){
+ const options=data.clients.map(c=>'<option value="'+c.id+'">'+esc(c.name)+'</option>').join("");
+ modal("Préparer une estimation",'<form id="quoteForm"><div class="form-grid"><div class="form-group full"><label>Client</label><select class="field" name="clientId">'+options+'</select></div><div class="form-group full"><label>Prestation</label><select class="field" name="service"><option>Site vitrine — 1 page</option><option>Site vitrine — jusqu’à 3 pages</option><option>Site vitrine — jusqu’à 5 pages</option><option>Prestation sur mesure</option></select></div>'+field("Montant indicatif (€)","amount","89","number")+field("Date","date",new Date().toISOString().slice(0,10),"date")+'</div><div class="quote-total"><div><small style="color:var(--muted)">ESTIMATION INDICATIVE</small><div style="font-size:11px;color:var(--muted)">À valider avant tout envoi</div></div><strong id="quotePreview">89 €</strong></div><div class="form-actions"><button type="button" class="btn" data-action="close-modal">Annuler</button><button class="btn primary">Enregistrer</button></div></form>');
+ const amount=document.querySelector('[name="amount"]');amount.addEventListener("input",()=>document.getElementById("quotePreview").textContent=money(amount.value));
+ document.getElementById("quoteForm").onsubmit=e=>{e.preventDefault();const o=Object.fromEntries(new FormData(e.target).entries());o.amount=Math.max(0,Number(o.amount)||0);o.clientId=Number(o.clientId);o.id=Date.now();o.ref="EST-"+String(o.id).slice(-6);data.quotes.unshift(o);save();closeModal();render();toast("Estimation enregistrée.")};
+}
+function taskForm(){
+ const options='<option value="">Tâche générale</option>'+data.projects.map(p=>'<option value="'+p.id+'">'+esc(p.name)+'</option>').join("");
+ modal("Ajouter une tâche",'<form id="taskForm"><div class="form-grid"><div class="form-group full"><label>Intitulé *</label><input class="field" name="title" placeholder="Ex. Préparer les contenus du site" required></div><div class="form-group full"><label>Projet associé</label><select class="field" name="projectId">'+options+'</select></div></div><div class="form-actions"><button type="button" class="btn" data-action="close-modal">Annuler</button><button class="btn primary">Ajouter</button></div></form>');
+ document.getElementById("taskForm").onsubmit=e=>{e.preventDefault();const o=Object.fromEntries(new FormData(e.target).entries());data.tasks.unshift({id:Date.now(),title:o.title,projectId:o.projectId?Number(o.projectId):null,done:false});save();closeModal();render();toast("Tâche ajoutée.")};
+}
+function toast(msg){const r=document.getElementById("toastRoot");r.innerHTML='<div class="toast">'+esc(msg)+'</div>';setTimeout(()=>r.innerHTML="",2400)}
+function bind(){
+ document.querySelectorAll("[data-page]").forEach(b=>b.onclick=()=>{page=b.dataset.page;document.getElementById("sidebar").classList.remove("open");render()});
+ const cs=document.getElementById("clientSearch"),cf=document.getElementById("clientFilter");
+ if(cs)cs.oninput=filterClients;if(cf)cf.onchange=filterClients;
+ const ps=document.getElementById("projectSearch"),pf=document.getElementById("projectFilter");
+ if(ps)ps.oninput=filterProjects;if(pf)pf.onchange=filterProjects;
+ document.querySelectorAll("[data-action]").forEach(b=>b.onclick=()=>act(b.dataset.action,b.dataset.id));
+ document.querySelectorAll("[data-task]").forEach(c=>c.onchange=()=>{const t=data.tasks.find(x=>x.id===Number(c.dataset.task));if(t){t.done=c.checked;save();render()}});
+}
+function filterClients(){const q=(document.getElementById("clientSearch").value||"").toLowerCase(),s=document.getElementById("clientFilter").value;document.getElementById("clientRows").innerHTML=clientRows(data.clients.filter(c=>(!s||c.status===s)&&[c.name,c.contact,c.email,c.sector].join(" ").toLowerCase().includes(q)));bind()}
+function filterProjects(){const q=(document.getElementById("projectSearch").value||"").toLowerCase(),s=document.getElementById("projectFilter").value;document.getElementById("projectRows").innerHTML=projectRows(data.projects.filter(p=>(!s||p.status===s)&&[p.name,clientName(p.clientId),p.type].join(" ").toLowerCase().includes(q)));bind()}
+function act(a,id){
+ if(a==="new-client")clientForm();if(a==="edit-client")clientForm(id);
+ if(a==="new-project")projectForm();if(a==="edit-project")projectForm(id);
+ if(a==="new-quote"){if(!data.clients.length)return toast("Ajoute d'abord un client.");quoteForm()}
+ if(a==="new-task")taskForm();if(a==="close-modal")closeModal();
+ if(a==="delete-client"||a==="delete-project"||a==="delete-task"||a==="delete-quote"){if(!confirm("Confirmer la suppression ?"))return;const key={"delete-client":"clients","delete-project":"projects","delete-task":"tasks","delete-quote":"quotes"}[a];data[key]=data[key].filter(x=>x.id!==Number(id));save();render();toast("Élément supprimé.")}
+ if(a==="export"){const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),url=URL.createObjectURL(blob),link=document.createElement("a");link.href=url;link.download="nova-ai-client-studio-export.json";link.click();URL.revokeObjectURL(url);toast("Export téléchargé.")}
+ if(a==="reset"){if(!confirm("Restaurer les exemples fictifs ? Toutes tes données locales actuelles seront remplacées."))return;data=JSON.parse(JSON.stringify(initial));save();render();toast("Démonstration réinitialisée.")}
+}
+document.getElementById("mobileMenu").onclick=()=>document.getElementById("sidebar").classList.toggle("open");
+render();
+})();
+</script>
+</body>
+</html>
