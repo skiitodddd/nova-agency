@@ -182,6 +182,76 @@ section{padding:75px 0}
 .reveal{opacity:1;transform:none}
 }
 </style>
+
+<style id="nova-v2-overrides">
+:root{--bg:#11110f;--surface:#191916;--surface2:#22221d;--text:#f4f2eb;--muted:#aaa89f;--purple:#d8f36a;--gradient:linear-gradient(110deg,#e8edcf,#d8f36a);--border:rgba(244,242,235,.14)}
+body{background:#f1f0eb;color:#171714}
+header{background:rgba(241,240,235,.93);border-bottom:1px solid rgba(17,17,15,.14)}
+.logo{color:#171714}.logo span{color:#77766f}
+.nav-links a{color:#66655e}.nav-links a:hover{color:#11110f}
+.nav-cta{background:#171714;color:#f8f7f1!important;border-radius:0}
+.menu-toggle{color:#171714}
+.hero{background:#11110f;color:#f4f2eb;min-height:720px}
+.hero:before{background:#d8f36a18;filter:blur(130px)}
+.eyebrow{border:1px solid #d8f36a55;border-radius:2px;background:#d8f36a10;color:#d8f36a}
+.status-dot{background:#d8f36a;box-shadow:0 0 12px #d8f36a}
+.gradient-text{background:none;color:#d8f36a}
+.btn{background:#d8f36a;color:#171714;border-radius:2px}
+.btn:hover{box-shadow:0 12px 35px #d8f36a22}
+.btn-outline{background:transparent;color:inherit;border-color:rgba(255,255,255,.35)}
+section:not(.hero):not(.about-section):not(.work):not(.process-section):not(.contact-section){background:#f1f0eb;color:#171714}
+.section-label{color:#77766f}
+.section-description{color:#77766f}
+.services-grid{border-top:1px solid rgba(17,17,15,.15);gap:0}
+.service-card{background:transparent;border:0;border-bottom:1px solid rgba(17,17,15,.15);border-radius:0;padding:30px 28px 30px 0}
+.service-card+.service-card{border-left:1px solid rgba(17,17,15,.15);padding-left:28px}
+.service-card:hover{transform:translateY(-4px);border-color:#aaa89f;background:transparent}
+.service-icon{background:#e5e4dd;border:1px solid rgba(17,17,15,.12);border-radius:2px;color:#171714}
+.service-card p{color:#77766f}.service-card a{color:#55554d}
+.about-section,.process-section{background:#e5e4dd;color:#171714}
+.about-visual{border-radius:0;background:#11110f}
+.about-badge{background:#22221d;border-radius:0;color:#d8f36a}
+.about-copy p{color:#68675f}.about-point{color:#25251f}
+.check{border-radius:0;background:#d8f36a;color:#171714}
+#portfolio{background:#11110f!important;color:#f4f2eb!important}
+#portfolio .section-label,#portfolio .section-description{color:#aaa89f}
+.project-card{border:1px solid rgba(255,255,255,.13);border-radius:0;background:#191916}
+.project-card:hover{border-color:#d8f36a80}
+.project-preview{border-radius:0}
+.project-tag{border-radius:0;background:#d8f36a;color:#171714}
+.project-link{color:#d8f36a}
+.process-card{background:transparent;border:0;border-top:1px solid rgba(17,17,15,.18);border-radius:0;padding:24px 12px}
+.process-number{color:#77766f}
+.price-card{background:#e8e7e0;border:1px solid rgba(17,17,15,.15);border-radius:0;color:#171714}
+.price-card.featured{background:#171714;color:#f4f2eb;border-color:#171714;box-shadow:none}
+.price-card .sub,.price small{color:#77766f}
+.price-card.featured .sub,.price-card.featured .price small{color:#aaa89f}
+.price-features li{color:#55554d}
+.price-card.featured .price-features li{color:#d8d6cc}
+.price-features li:before{color:#77766f}
+.price-card.featured .price-features li:before{color:#d8f36a}
+.popular{background:#d8f36a;color:#171714;border-radius:0}
+.price-card .btn-outline{color:#171714;border-color:#aaa89f}
+.price-card.featured .btn{background:#d8f36a;color:#171714}
+.pricing-note{color:#77766f}
+.faq-item{background:#e8e7e0;border:1px solid rgba(17,17,15,.12);border-radius:0}
+.faq-question{color:#171714}.faq-question span:last-child{color:#77766f}
+.faq-answer p{color:#66655e}
+.contact-section{background:#11110f;color:#f4f2eb}
+.contact-copy p{color:#aaa89f}
+.contact-detail,.contact-form{background:#191916;border:1px solid rgba(255,255,255,.14);border-radius:0}
+.contact-detail small{color:#aaa89f}
+.field label{color:#dedcd3}
+.field input,.field textarea,.field select{background:#11110f;border:1px solid rgba(255,255,255,.16);border-radius:0}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:#d8f36a}
+.contact-form .btn{background:#d8f36a;color:#171714}
+footer{background:#f1f0eb;color:#171714;border-top:1px solid rgba(17,17,15,.14)}
+.footer-copy,.footer-links a{color:#77766f}
+.reveal{transform:translateY(18px)}
+@media(max-width:850px){.service-card+.service-card{padding-left:0;border-left:0}}
+@media(max-width:650px){.nav-links{background:#f1f0eb;border-bottom:1px solid rgba(17,17,15,.14)}.nav-links a{color:#33332e}.nav-cta{color:#f8f7f1!important}.service-card{padding:26px 0}.service-card+.service-card{padding-left:0}}
+</style>
+
 </head>
 
 <body>
@@ -339,7 +409,7 @@ section{padding:75px 0}
 <h2 class="section-title">Votre prochain projet commence <span class="gradient-text">ici.</span></h2>
 <p>Vous avez une idée, une entreprise à développer ou un projet digital ? Présentez-nous votre besoin et échangeons sur les possibilités.</p>
 <div class="contact-detail"><small>AGENCE</small><strong>NOVA AI — Digital Agency</strong></div>
-<div class="contact-detail"><small>EMAIL</small><strong>skiitosaka@gmail.com</strong></div>
+<div class="contact-detail"><small>EMAIL</small><strong>novaai.agence@gmail.com</strong></div>
 </div>
 <form class="contact-form reveal" id="contactForm">
 <div class="form-row">
@@ -405,7 +475,7 @@ document.querySelectorAll(".reveal").forEach(element => observer.observe(element
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const CONTACT_EMAIL = "skiitosaka@gmail.com";
+const CONTACT_EMAIL = "novaai.agence@gmail.com";
 
 document.getElementById("contactForm").addEventListener("submit", event => {
   event.preventDefault();
