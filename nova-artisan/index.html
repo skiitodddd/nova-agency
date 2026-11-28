@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#11110f">
+<meta name="description" content="NOVA ARTISAN — concept de présence digitale pour artisans : portfolio, demandes de devis et visibilité locale.">
+<title>NOVA ARTISAN — NOVA AI</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#11110f;--paper:#f1f0eb;--ink:#171714;--muted:#aaa89f;--line:rgba(244,242,235,.15);--lime:#d8f36a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--bg);color:#f4f2eb;font-family:'DM Sans',sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+header{height:76px;position:sticky;top:0;z-index:10;background:rgba(17,17,15,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+nav{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{font:700 24px 'Space Grotesk';letter-spacing:-1px}.logo span{color:var(--lime)}
+.navlinks{display:flex;gap:26px;align-items:center;color:#c6c4bb;font-size:13px}
+.navlinks a:hover{color:var(--lime)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;background:var(--lime);color:var(--ink);font-weight:800;font-size:13px;border:1px solid var(--lime);transition:.2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px #d8f36a20}
+.btn.ghost{background:transparent;color:#f4f2eb;border-color:#77766f}
+.hero{padding:105px 0 90px;background:radial-gradient(ellipse at 82% 20%,#d8f36a17,transparent 35%),var(--bg)}
+.kicker{display:inline-block;border:1px solid #d8f36a66;color:var(--lime);padding:7px 11px;font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase}
+h1,h2,h3{font-family:'Space Grotesk',sans-serif;line-height:1.1;letter-spacing:-1.5px}
+h1{font-size:clamp(46px,7vw,82px);max-width:850px;margin:25px 0}
+h1 em{font-style:normal;color:var(--lime)}
+.lead{max-width:650px;color:#b5b3aa;font-size:16px;line-height:1.9}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-note{margin-top:44px;color:#85837b;font-size:11px}
+section{padding:88px 0}
+.paper{background:var(--paper);color:var(--ink)}
+.label{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800;color:#77766f;margin-bottom:13px}
+h2{font-size:clamp(32px,4vw,48px);max-width:760px}
+.intro{color:#69685f;max-width:640px;margin-top:16px;font-size:14px;line-height:1.9}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
+.card{padding:27px;border:1px solid rgba(17,17,15,.16);background:#e8e7e0}
+.icon{width:42px;height:42px;display:grid;place-items:center;background:var(--lime);font-size:20px;margin-bottom:23px}
+.card h3{font-size:19px;letter-spacing:-.4px;margin-bottom:11px}
+.card p{font-size:13px;color:#68675f;line-height:1.8}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:42px}
+.step{border-top:1px solid rgba(17,17,15,.25);padding-top:18px}
+.step b{font:700 27px 'Space Grotesk';color:#77766f}
+.step h3{font-size:17px;margin:14px 0 8px;letter-spacing:-.3px}
+.step p{font-size:12px;color:#68675f;line-height:1.8}
+.examples{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.example{min-height:210px;padding:27px;background:#1a1a16;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}
+.example small{color:var(--lime);letter-spacing:1.4px;font-size:10px;font-weight:800}
+.example h3{font-size:27px;max-width:340px}
+.example p{font-size:12px;color:#aaa89f;max-width:390px}
+.notice{margin-top:30px;padding:18px 20px;border:1px solid rgba(17,17,15,.2);font-size:12px;color:#626158;line-height:1.8}
+.contact{background:#1b1b17}
+.contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:center}
+.contact p{color:#aaa89f;font-size:14px;line-height:1.9;margin-top:16px;max-width:600px}
+.contact-box{border:1px solid var(--line);padding:25px}
+.contact-box small{display:block;color:#aaa89f;font-size:10px;margin-bottom:7px}
+.contact-box strong{font-size:14px}
+footer{padding:28px 0;color:#88867e;font-size:11px}
+.footer{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+@media(max-width:760px){.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:560px){header{height:auto;min-height:68px}.navlinks{gap:12px;font-size:11px}.navlinks a:nth-child(2){display:none}.hero{padding:78px 0 65px}section{padding:65px 0}.grid,.examples,.steps{grid-template-columns:1fr}.card{padding:23px}h1{letter-spacing:-2px}.lead{font-size:14px}.actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<header><div class="container"><nav>
+<a class="logo" href="../index.html">NOVA<span>.</span>AI</a>
+<div class="navlinks"><a href="../index.html">Agence NOVA AI</a><a href="#services">L'offre</a><a href="#contact" class="btn">Parler du projet ↗</a></div>
+</nav></div></header>
+<main>
+<section class="hero"><div class="container">
+<span class="kicker">NOVA AI / OFFRE SPÉCIALISÉE</span>
+<h1>Votre savoir-faire mérite une <em>vitrine à sa hauteur.</em></h1>
+<p class="lead">NOVA ARTISAN est un concept d'accompagnement digital destiné aux artisans et petites entreprises : mieux présenter leurs réalisations, rendre leurs services plus compréhensibles et faciliter les demandes de contact ou de devis.</p>
+<div class="actions"><a class="btn" href="#services">Découvrir l'approche ↘</a><a class="btn ghost" href="#contact">Échanger avec NOVA AI</a></div>
+<p class="hero-note">CONCEPT EN DÉVELOPPEMENT · EXEMPLES DE DÉMONSTRATION · PAS DE RÉSULTATS COMMERCIAUX GARANTIS</p>
+</div></section>
+<section class="paper" id="services"><div class="container">
+<div class="label">L'approche NOVA ARTISAN</div>
+<h2>Transformer une visite en prise de contact.</h2>
+<p class="intro">Un site utile ne doit pas seulement être esthétique. Il doit aider un visiteur à comprendre votre activité, découvrir vos réalisations et savoir comment vous contacter.</p>
+<div class="grid">
+<article class="card"><div class="icon">▧</div><h3>Présenter votre activité</h3><p>Une page claire qui explique vos prestations, votre zone d'intervention et ce qui distingue votre savoir-faire.</p></article>
+<article class="card"><div class="icon">▦</div><h3>Mettre vos réalisations en valeur</h3><p>Une galerie organisée avec des photos, des descriptions et des exemples de projets réalisés.</p></article>
+<article class="card"><div class="icon">↗</div><h3>Faciliter les demandes</h3><p>Des boutons de contact visibles et un formulaire de demande de devis simple, adapté au téléphone.</p></article>
+</div>
+</div></section>
+<section><div class="container">
+<div class="label">Un parcours simple</div><h2>De la découverte au premier échange.</h2>
+<div class="steps">
+<article class="step"><b>01</b><h3>Découvrir</h3><p>Le visiteur comprend rapidement votre métier et vos services.</p></article>
+<article class="step"><b>02</b><h3>Se projeter</h3><p>Il consulte vos réalisations et trouve des réponses aux questions essentielles.</p></article>
+<article class="step"><b>03</b><h3>Vous contacter</h3><p>Il envoie une demande de contact ou de devis avec les informations utiles.</p></article>
+<article class="step"><b>04</b><h3>Faire le suivi</h3><p>Vous pouvez organiser les demandes reçues et préparer vos réponses.</p></article>
+</div>
+</div></section>
+<section class="paper"><div class="container">
+<div class="label">Exemples de secteurs</div><h2>Une présentation adaptée à votre métier.</h2>
+<div class="examples">
+<article class="example"><small>01 / BOIS & MENUISERIE</small><h3>Montrer la qualité des finitions.</h3><p>Galerie de meubles, agencements, matériaux et projets sur mesure.</p></article>
+<article class="example"><small>02 / PAYSAGISME</small><h3>Faire découvrir les transformations.</h3><p>Photos avant/après, types d'aménagements et zone d'intervention.</p></article>
+<article class="example"><small>03 / ARTISANAT & CRÉATION</small><h3>Raconter le travail derrière l'objet.</h3><p>Présentation des pièces, du processus de fabrication et des demandes personnalisées.</p></article>
+<article class="example"><small>04 / PHOTOGRAPHIE</small><h3>Créer un portfolio facile à parcourir.</h3><p>Sélection de galeries, spécialités et formulaire de prise de contact.</p></article>
+</div>
+<p class="notice"><strong>À savoir :</strong> les exemples présentés sont des concepts de démonstration. NOVA AI est un projet en développement ; toute prestation éventuelle devra être étudiée, validée et encadrée avant tout engagement.</p>
+</div></section>
+<section class="contact" id="contact"><div class="container"><div class="contact-grid">
+<div><div class="label" style="color:var(--lime)">Échangeons</div><h2>Votre activité mérite une présence digitale claire.</h2><p>Présentez votre métier et votre besoin. Nous pourrons étudier une piste de présentation adaptée, sans promesse de résultat automatique.</p></div>
+<div class="contact-box"><small>CONTACT NOVA AI</small><strong>novaai.agence@gmail.com</strong><div style="margin-top:22px"><a class="btn" href="mailto:novaai.agence@gmail.com?subject=Projet%20NOVA%20ARTISAN">Préparer un email ↗</a></div><p style="font-size:10px;margin-top:15px">Le bouton ouvre votre application de messagerie. Vous gardez la main sur l'envoi.</p></div>
+</div></div></section>
+</main>
+<footer><div class="container footer"><a class="logo" href="../index.html">NOVA<span>.</span>AI</a><span>© <span id="year"></span> NOVA AI — Projet en développement.</span><a href="../index.html">Retour au site principal ↗</a></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
